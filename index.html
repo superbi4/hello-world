@@ -1,4 +1,4 @@
-<!-- Letztes Update: 14. Juni 2018 01:01 -->
+<!-- Letztes Update: 12. Juni 2018 14:57 -->
 <!DOCTYPE html>
 <html lang="de">
 
@@ -13,6 +13,8 @@
   <meta name="Description" content="Melodic Death Metal Band aus Rostock">
   <style>
     html,body {line-height: 1.8;}
+
+/* Overlay für das Hauptmenü */
     .overlay {
       height: 100%;
       width: 0;
@@ -25,7 +27,6 @@
       overflow-x: hidden;
       transition: 0.5s;
     }
-
     .overlay-content {
       position: relative;
       top: 15%;
@@ -33,7 +34,6 @@
       text-align: center;
       margin-top: 30px;
     }
-
     .overlay a {
       padding: 8px;
       text-decoration: none;
@@ -42,19 +42,32 @@
       display: block;
       transition: 0.3s;
     }
-
     .overlay a:hover, .overlay a:focus {
       color: #f1f1f1;
     }
-
     .overlay .closebtn {
       position: absolute;
       top: 15px;
       right: 40px;
       font-size: 40px;
     }
+
+/* Greyscale-Effekt für Bilder */
     .greyimg {filter:grayscale(75%)}
     .greyimg:hover {filter:grayscale(25%)}
+
+/* Text-Link-Design */
+    .textlink a:link, .textlink a:visited {
+      text-decoration: none;
+      color: #818181;
+    }
+    .textlink a:hover {color: #f1f1f1;}
+    .textlink a:active {
+      text-decoration: none;
+      color: #818181;
+    }
+
+/* Breaking-Points */
     @media screen and (max-height: 450px) {
       .overlay a {font-size: 20px}
       .overlay .closebtn {
@@ -87,6 +100,8 @@
     @media screen and (min-width:950px) {
       .mobile {display:table-cell;width:49.9999%!important}
     }
+
+/* Zoom-Effekt für Bilder */
     .Image-zoom-effect {
       -webkit-transform:scale(1) rotate(.02deg) translateZ(0);
       transform:scale(1) rotate(.02deg) translateZ(0);
@@ -103,6 +118,8 @@
       transition:transform .5s ease-in;
       transition:transform .5s ease-in,-webkit-transform .5s ease-in
     }
+
+/* Container für eingebettete Videos */
     .responsvid {
       position: relative;
       padding-bottom: 56.25%; /* Default for 1600x900 videos 16:9 ratio*/
@@ -142,7 +159,7 @@
       <a href="#ep" onclick="closeNav()">EP</a>
     </div>
   </div>
-<!-- Container (Band) -->
+<!-- Container (BAND) -->
   <div class="w3-container w3-padding-64 w3-center">
     <img class="w3-animate-opacity" id="logo" src="/hello-world/images/VI_Lang.png">
     <p class="w3-center w3-large"><em>Melo-Death-Metal aus Rostock</em></p>
@@ -197,7 +214,7 @@
           <img src="/hello-world/images/2018-10-13_Regional-Finale.jpg" style="width:100%">
 	  <div class="w3-container w3-white">
 	    <h2>Indra Musikclub, Hamburg</h2>
-	    <p class="w3-text-grey">Samstag, 13.10.2018. 19 Uhr.</p>
+	    <p class="w3-text-grey">Samstag, 13.10.2018<br>19:00 Uhr</p>
           </div>
 	  <div id="newsinfos01" class="w3-container w3-white w3-hide">
 	    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
@@ -214,14 +231,13 @@
         <div class="w3-container w3-card w3-center w3-margin-bottom" style="padding:0;width:80%;margin:auto;">
           <div class="responsvid"><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/V07aLCc9gr4?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
-	  <div class="w3-container w3-black"><p class="w3-text-orange w3-large" style="text-align:left;margin:0;padding:0">Siren Singer</p><p class="w3-text-white w3-tiny" style="text-align:left;margin:0;padding:0;padding-bottom:5px">Zuckerfabrik Rostock, 27. März 2018.</p></div>
+	  <div class="w3-container w3-black"><p class="w3-text-orange w3-large" style="text-align:left;margin:0;padding:0">Siren Singer</p><p class="w3-text-white w3-tiny" style="text-align:left;margin:0;padding:0;padding-bottom:5px">Alte Zuckerfabrik Rostock, 27. März 2018.</p></div>
         </div>
         <div class="w3-container w3-card w3-center w3-margin-top" style="padding:0;width:80%;margin:auto;">
           <div class="responsvid"><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/LpnD2aPqhAU?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
-	  <div class="w3-container w3-black"><p class="w3-text-orange w3-large" style="text-align:right;margin:0;padding:0">Lovesick in Hatred</p><p class="w3-text-white w3-tiny" style="text-align:right;margin:0;padding:0;padding-bottom:5px">Zuckerfabrik Rostock, 27. März 2018.</p></div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+	  <div class="w3-container w3-black"><p class="w3-text-orange w3-large" style="text-align:right;margin:0;padding:0">Lovesick in Hatred</p><p class="w3-text-white w3-tiny" style="text-align:right;margin:0;padding:0;padding-bottom:5px">Alte Zuckerfabrik Rostock, 27. März 2018.</p></div>
+          <p class="textlink" style="margin-top:50px;">Am 27. März standen wir erstmals für euch auf der Bühne &ndash; zusammen mit <a href="https://www.facebook.com/modicumofhope/" target="_blank">Modicum of Hope</a>, <a href="https://www.facebook.com/RadagostBand" target="_blank">Radagost</a> und <a href="https://www.facebook.com/negraschus" target="_blank">Maik Negraschus</a>. Danke für den geilen Abend!</p><p style="margin-bottom:20px;"><span class="w3-button w3-border w3-padding-small">Mehr Videos</span></p>
         </div>
       </div>
     </div>
@@ -252,6 +268,7 @@
   </div>
 
 <script>
+// horizontale Menüleiste auf und unter dem Hero-Image unterschiedlich anzeigen
 window.onscroll = function() {changenavbar()};
 function changenavbar() {
     var navg = document.getElementById("navbar_g");
@@ -281,12 +298,14 @@ function changenavbar() {
         socialytg.className = "w3-button w3-large w3-text-white w3-left";
     }
 }
+// Hauptmenü (Overlay) anzeigen und schließen
 function openNav() {
     document.getElementById("myNav").style.width = "100%";
 }
 function closeNav() {
     document.getElementById("myNav").style.width = "0%";
 }
+// Container verbergen und anzeigen
 function anzeigetoggle(id) {
     var x = document.getElementById(id);
     if (x.className.indexOf("w3-show") == -1) {
@@ -295,6 +314,7 @@ function anzeigetoggle(id) {
         x.className = x.className.replace(" w3-show", "");
     }
 }
+// Container verbergen und anzeigen + Button je nach Zustand verändern
 function anzeigetoggleundchangebtn(id,btn) {
     var y = document.getElementById(btn);
     var z = document.getElementById(id);
