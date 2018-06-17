@@ -1,4 +1,4 @@
-<!-- Letztes Update: 15. Juni 2018 10:12 -->
+<!-- Letztes Update: 17. Juni 2018 22:02 -->
 <!DOCTYPE html>
 <html lang="de">
 
@@ -56,13 +56,23 @@
     .greyimg {filter:grayscale(75%)}
     .greyimg:hover {filter:grayscale(25%)}
 
-/* Text-Link-Design */
-    .textlink a:link, .textlink a:visited {
+/* Text-Link-Design dunkel */
+    .textlink_d a:link, .textlink_d a:visited {
       text-decoration: none;
       color: #818181;
     }
-    .textlink a:hover {color: #f1f1f1;}
-    .textlink a:active {
+    .textlink_d a:hover {color: #f1f1f1;}
+    .textlink_d a:active {
+      text-decoration: none;
+      color: #818181;
+    }
+/* Text-Link-Design hell */
+    .textlink_h a:link, .textlink_h a:visited {
+      text-decoration: none;
+      color: #818181;
+    }
+    .textlink_h a:hover {color: #b3b3b3;}
+    .textlink_h a:active {
       text-decoration: none;
       color: #818181;
     }
@@ -217,11 +227,13 @@
 	    <p class="w3-text-grey">Samstag, 13.10.2018<br>19:00 Uhr</p>
           </div>
 	  <div id="newsinfos01" class="w3-container w3-white w3-hide">
-	    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.</p>
-	  </div>
+	    <p class="textlink_h">Im Oktober stehen wir im Regional-Finale des <a href="https://www.sph-bandcontest.de/info" target="_blank">SPH-Bandcontests</a> in Hamburg. Einer der traditionsreichen Clubs in der Großen Freiheit wird die Kulisse für das Spektakel sein: der <a href="http://indraclub64.de" target="_blank">Indra Club 64</a>. Vier bis acht Bands bieten euch handgemachte Musik &ndash; von Pop, Metal bis Indy-Rock. Noch stehen nicht alle Teilnehmer fest, aber sicher ist: Es wird ein bunter Abend.</p>
+	    <p class="textlink_h">Da der Weg nach Hamburg weit ist, hier die gute Nachricht: Zusammen mit <a href="https://www.facebook.com/modicumofhope/" target="_blank">Modicum of Hope</a> haben wir einen Bus organisiert. Der bringt euch und uns von Rostock zum Konzert und anschließend wieder zurück. Mehr Infos dazu findet ihr unter "Tickets".</p>
+            <p>Wir sehen uns in Hamburg!</p>
+          </div>
 	  <div class="w3-container w3-white">
             <button id="morebtn" class="w3-button w3-border w3-dark-grey w3-margin-top w3-margin-bottom w3-margin-right" onclick="anzeigetoggleundchangebtn('newsinfos01','morebtn')"><i class="fa fa-caret-down"></i>  Infos</button>
-	    <button class="w3-button w3-border w3-dark-grey w3-margin-top w3-margin-bottom">Tickets</button>
+	    <button class="w3-button w3-border w3-dark-grey w3-margin-top w3-margin-bottom" onclick="document.getElementById('tickets').style.display='block'">Tickets</button>
           </div>
         </div>
       </div>
@@ -237,7 +249,17 @@
           <div class="responsvid"><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/LpnD2aPqhAU?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
 	  <div class="w3-container w3-black"><p class="w3-text-orange w3-large" style="text-align:right;margin:0;padding:0">Lovesick in Hatred</p><p class="w3-text-white w3-tiny" style="text-align:right;margin:0;padding:0;padding-bottom:5px">Alte Zuckerfabrik Rostock, 27. März 2018.</p></div>
-          <p class="textlink" style="margin-top:50px;">Feuertaufe: Am 27. März standen wir erstmals auf der Bühne &ndash; zusammen mit <a href="https://www.facebook.com/modicumofhope/" target="_blank" style="text-decoration:none;">Modicum of Hope</a>, <a href="https://www.facebook.com/RadagostBand" target="_blank">Radagost</a> und <a href="https://www.facebook.com/negraschus" target="_blank">Maik Negraschus</a>. Danke für den geilen Abend!</p><p style="margin-bottom:20px;"><span class="w3-button w3-border w3-padding-small">Mehr Videos</span></p>
+          <p class="textlink_d" style="margin-top:50px;margin-bottom:50px;">Feuertaufe: Am 27. März standen wir erstmals auf der Bühne &ndash; zusammen mit <a href="https://www.facebook.com/modicumofhope/" target="_blank">Modicum of Hope</a>, <a href="https://www.facebook.com/RadagostBand" target="_blank">Radagost</a> und <a href="https://www.facebook.com/negraschus" target="_blank">Maik Negraschus</a>. Danke für den geilen Abend!</p><p style="margin-bottom:20px;"><button id="morevids_btn" class="w3-button w3-border w3-padding-small" onclick="anzeigeundhidebtn('morevids','morevids_btn')">Mehr Videos</button></p>
+        </div>
+        <div class="w3-container w3-card w3-center w3-margin-bottom morevids w3-animate-opacity w3-hide" style="padding:0;width:80%;margin:auto;">
+          <div class="responsvid"><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Um56wapTaak?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+	  <div class="w3-container w3-black"><p class="w3-text-orange w3-large" style="text-align:left;margin:0;padding:0">Point of No Return</p><p class="w3-text-white w3-tiny" style="text-align:left;margin:0;padding:0;padding-bottom:5px">Alte Zuckerfabrik Rostock, 27. März 2018.</p></div>
+        </div>
+        <div class="w3-container w3-card w3-center w3-margin-top morevids w3-animate-opacity w3-hide" style="padding:0;width:80%;margin:auto;">
+          <div class="responsvid"><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/3z-GNGt_snU?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+	  <div class="w3-container w3-black"><p class="w3-text-orange w3-large" style="text-align:right;margin:0;padding:0">Blood of Innocence</p><p class="w3-text-white w3-tiny" style="text-align:right;margin:0;padding:0;padding-bottom:5px">Alte Zuckerfabrik Rostock, 27. März 2018.</p></div>
         </div>
       </div>
     </div>
@@ -266,6 +288,16 @@
       <a href="#" class="w3-button w3-border">Back to the top</a>
     </div>
   </div>
+<!-- Modal (Tickets SPH Hamburg) -->
+  <div id="tickets" class="w3-modal w3-animate-opacity" style="background-color:rgba(0,0,0,0.8)">
+    <div class="w3-modal-content">
+      <div class="w3-container w3-padding-64" style="width:80%;margin:auto;">
+        <span onclick="document.getElementById('tickets').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+        <p class="w3-large">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </div>
+  </div>
+
 
 <script>
 // horizontale Menüleiste auf und unter dem Hero-Image unterschiedlich anzeigen
@@ -314,7 +346,7 @@ function anzeigetoggle(id) {
         x.className = x.className.replace(" w3-show", "");
     }
 }
-// Container verbergen und anzeigen + Button je nach Zustand verändern
+// Container verbergen und anzeigen + Button je nach Zustand verändern (News in UPCOMING)
 function anzeigetoggleundchangebtn(id,btn) {
     var y = document.getElementById(btn);
     var z = document.getElementById(id);
@@ -325,6 +357,15 @@ function anzeigetoggleundchangebtn(id,btn) {
         z.className = z.className.replace(" w3-show", "");
         y.innerHTML = "<i class='fa fa-caret-down'></i>  Infos";
     }
+}
+// Container anzeigen + Button verbergen (MEHR VIDEOS-Button in LIVE)
+function anzeigeundhidebtn(cl,btn) {
+    var y = document.getElementById(btn);
+    var z = document.getElementsByClassName(cl);
+    for (i = 0; i < z.length; i++) {
+       z[i].className += " w3-show";
+    }
+    y.className += " w3-hide";
 }
 </script>
 </body>
