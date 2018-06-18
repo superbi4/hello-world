@@ -1,4 +1,4 @@
-<!-- Letztes Update: 17. Juni 2018 22:02 -->
+<!-- Letztes Update: 15. Juni 2018 10:12 -->
 <!DOCTYPE html>
 <html lang="de">
 
@@ -227,7 +227,7 @@
 	    <p class="w3-text-grey">Samstag, 13.10.2018<br>19:00 Uhr</p>
           </div>
 	  <div id="newsinfos01" class="w3-container w3-white w3-hide">
-	    <p class="textlink_h">Im Oktober stehen wir im Regional-Finale des <a href="https://www.sph-bandcontest.de/info" target="_blank">SPH-Bandcontests</a> in Hamburg. Einer der traditionsreichen Clubs in der Großen Freiheit wird die Kulisse für das Spektakel sein: der <a href="http://indraclub64.de" target="_blank">Indra Club 64</a>. Vier bis acht Bands bieten euch handgemachte Musik &ndash; von Pop, Metal bis Indy-Rock. Noch stehen nicht alle Teilnehmer fest, aber sicher ist: Es wird ein bunter Abend.</p>
+	    <p class="textlink_h">Im Oktober sind wir beim Regional-Finale des <a href="https://www.sph-bandcontest.de/info" target="_blank">SPH-Bandcontests</a> in Hamburg dabei. Einer der traditionsreichen Orte in der Großen Freiheit wird die Kulisse für das Spektakel sein: der <a href="http://indraclub64.de" target="_blank">Indra Club 64</a>. Vier bis acht Bands bieten euch handgemachte Musik &ndash; von Pop, Metal bis Indy-Rock. Noch stehen nicht alle Teilnehmer fest, aber sicher ist: Es wird ein bunter Abend.</p>
 	    <p class="textlink_h">Da der Weg nach Hamburg weit ist, hier die gute Nachricht: Zusammen mit <a href="https://www.facebook.com/modicumofhope/" target="_blank">Modicum of Hope</a> haben wir einen Bus organisiert. Der bringt euch und uns von Rostock zum Konzert und anschließend wieder zurück. Mehr Infos dazu findet ihr unter "Tickets".</p>
             <p>Wir sehen uns in Hamburg!</p>
           </div>
@@ -291,9 +291,21 @@
 <!-- Modal (Tickets SPH Hamburg) -->
   <div id="tickets" class="w3-modal w3-animate-opacity" style="background-color:rgba(0,0,0,0.8)">
     <div class="w3-modal-content">
-      <div class="w3-container w3-padding-64" style="width:80%;margin:auto;">
-        <span onclick="document.getElementById('tickets').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+      <div class="w3-container w3-padding-32" style="width:80%;margin:auto;">
+        <span onclick="document.getElementById('tickets').style.display='none'" class="w3-button w3-display-topright w3-large">&times;</span>
         <p class="w3-large">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <form class="w3-container w3-margin" action>
+          <h3 style="margin-top:40px;">Kontaktdaten</h3>
+	  <input class="w3-input" type="text" placeholder="Name">
+	  <input class="w3-input" type="text" placeholder="E-Mail">
+	  <input class="w3-input" type="text" placeholder="Anmerkungen (optional)">
+          <h3 style="margin-top:40px;">Auswahl</h3>
+          <p><input class="w3-radio" type="radio" name="tickettyp" value="bus" checked><label class="w3-margin">Busfahrt</label></p>
+          <p><input class="w3-radio" type="radio" name="tickettyp" value="ticketonly"><label class="w3-margin">nur Konzertkarte</label></p>
+	</form>
+	<div class="w3-bar">
+	  <button class="w3-button w3-border w3-dark-grey w3-margin-top w3-margin-bottom">Absenden</button>
+	</div>
       </div>
     </div>
   </div>
