@@ -1,49 +1,101 @@
-<!-- Letztes Update: 26. Juni 2018 10:09 -->
-
+<!-- Letztes Update: 28. Juni 2018 16:02 -->
 <!--
 <?php
 //Import PHPMailer classes into the global namespace
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-$msg = '';
+$msg_contact = '';
+$msg_special = '';
 //Don't run this unless we're handling a form submission
-if (array_key_exists('email', $_POST)) {
+if (array_key_exists('email_contact', $_POST)) {
+    $msg_special = '';
     date_default_timezone_set('Etc/UTC');
     require '/usr/share/php/PHPMailer/src/Exception.php';
     require '/usr/share/php/PHPMailer/src/PHPMailer.php';
     require '/usr/share/php/PHPMailer/src/SMTP.php';
     //Create a new PHPMailer instance
-    $mail = new PHPMailer;
+    $mail_contact = new PHPMailer;
     //Tell PHPMailer to use SMTP
     //Faster and safer than using mail()
-    $mail->isSMTP();
-    $mail->Host = 'mail.gmx.net';
-    $mail->Port = 587;
-    $mail->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail->Username = 'user@example.com';                 // SMTP username
-    $mail->Password = 'secret';                           // SMTP password
-    $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-    $mail->CharSet = 'UTF-8';				  // Codierung erzwingen, um Umlaute korrekt anzuzeigen
+    $mail_contact->isSMTP();
+    $mail_contact->Host = 'mail.gmx.net';
+    $mail_contact->Port = 587;
+    $mail_contact->SMTPAuth = true;                               // Enable SMTP authentication
+    $mail_contact->Username = 'user@example.com';                 // SMTP username
+    $mail_contact->Password = 'secret';                           // SMTP password
+    $mail_contact->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+    $mail_contact->CharSet = 'UTF-8';				  // Codierung erzwingen, um Umlaute korrekt anzuzeigen
     //Use a fixed address in your own domain as the from address
     //**DO NOT** use the submitter's address here as it will be forgery
     //and will cause your messages to fail SPF checks
-    $mail->setFrom('vimailer@gmx.net');
+    $mail_contact->setFrom('vimailer@gmx.net');
     //Send the message to yourself, or whoever should receive contact for submissions
-    $mail->addReplyTo('viciousintentions@gmail.com');
-    $mail->addBCC('viciousintentions@gmail.com');
+    $mail_contact->addReplyTo('viciousintentions@gmail.com');
+    $mail_contact->addBCC('viciousintentions@gmail.com');
     //Put the submitter's address in a reply-to header
     //This will fail if the address provided is invalid,
     //in which case we should ignore the whole request
-    if ($mail->addAddress($_POST['email'])) {
-        $mail->Subject = 'Anmeldung Busfahrt SPH-Bandcontest // 13.10. Hamburg';
+    if ($mail_contact->addAddress($_POST['email_contact'])) {
+        $mail_contact->Subject = 'Nachricht über das Kontaktformular';
         //Keep it simple - don't use HTML
-        $mail->isHTML(false);
+        $mail_contact->isHTML(false);
         //Build a simple message body
-        $mail->Body = <<<EOT
-Hallo {$_POST['name']},
+        $mail_contact->Body = <<<EOT
+Eine Nachricht von {$_POST['name_contact']} ({$_POST['email_contact']}):
+
+{$_POST['nachricht_contact']}
+EOT;
+        //Send the message, check for errors
+        if (!$mail_contact->send()) {
+            //The reason for failing to send will be in $mail->ErrorInfo
+            //but you shouldn't display errors to users - process the error, log it on your server.
+            $msg_contact = $mail->ErrorInfo;
+        } else {
+            $msg_contact = 'Nachricht gesendet! Wir antworten dir so schnell wie möglich.';
+        }
+    } else {
+        $msg_contact = 'Fehler: Die angegebene E-Mail-Adresse ist ungültig.';
+    }
+}
+
+if (array_key_exists('email_special', $_POST)) {
+    $msg_contact = '';
+    date_default_timezone_set('Etc/UTC');
+    require '/usr/share/php/PHPMailer/src/Exception.php';
+    require '/usr/share/php/PHPMailer/src/PHPMailer.php';
+    require '/usr/share/php/PHPMailer/src/SMTP.php';
+    //Create a new PHPMailer instance
+    $mail_special = new PHPMailer;
+    //Tell PHPMailer to use SMTP
+    //Faster and safer than using mail()
+    $mail_special->isSMTP();
+    $mail_special->Host = 'mail.gmx.net';
+    $mail_special->Port = 587;
+    $mail_special->SMTPAuth = true;                               // Enable SMTP authentication
+    $mail_special->Username = 'user@example.com';                 // SMTP username
+    $mail_special->Password = 'secret';                           // SMTP password
+    $mail_special->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+    $mail_special->CharSet = 'UTF-8';				  // Codierung erzwingen, um Umlaute korrekt anzuzeigen
+    //Use a fixed address in your own domain as the from address
+    //**DO NOT** use the submitter's address here as it will be forgery
+    //and will cause your messages to fail SPF checks
+    $mail_special->setFrom('vimailer@gmx.net');
+    //Send the message to yourself, or whoever should receive contact for submissions
+    $mail_special->addReplyTo('viciousintentions@gmail.com');
+    $mail_special->addBCC('viciousintentions@gmail.com');
+    //Put the submitter's address in a reply-to header
+    //This will fail if the address provided is invalid,
+    //in which case we should ignore the whole request
+    if ($mail_special->addAddress($_POST['email_special'])) {
+        $mail_special->Subject = 'Anmeldung Busfahrt SPH-Bandcontest // 13.10. Hamburg';
+        //Keep it simple - don't use HTML
+        $mail_special->isHTML(false);
+        //Build a simple message body
+        $mail_special->Body = <<<EOT
+Hallo {$_POST['name_special']},
 
 danke für deine Anmeldung zu unserem Konzert am 13.10. in Hamburg!
-Du möchtest für {$_POST['anzahl']} Person/en Plätze dafür reservieren.
+Du möchtest für {$_POST['anzahl_special']} Person/en Plätze dafür reservieren.
 
 Wichtig: Um die Anmeldung abzuschließen, sende uns einfach eine leere E-Mail an die bereits eingestellte Antwort-Adresse. So können wir sicher sein, dass du auch wirklich die- oder derjenige bist, dem die angegebene E-Mail-Adresse gehört.
 
@@ -54,15 +106,15 @@ VICIOUS INTENTIONS
 Solltest du diese Anmeldung nicht vorgenommen haben, kannst du diese Nachricht ignorieren.
 EOT;
         //Send the message, check for errors
-        if (!$mail->send()) {
+        if (!$mail_special->send()) {
             //The reason for failing to send will be in $mail->ErrorInfo
             //but you shouldn't display errors to users - process the error, log it on your server.
-            $msg = $mail->ErrorInfo;
+            $msg_special = $mail->ErrorInfo;
         } else {
-            $msg = 'Anmeldung erhalten! Bitte prüfe dein E-Mail-Postfach, um sie abzuschließen.';
+            $msg_special = 'Anmeldung erhalten! Bitte prüfe dein E-Mail-Postfach, um sie abzuschließen.';
         }
     } else {
-        $msg = 'Fehler: Die angegebene E-Mail-Adresse ist ungültig.';
+        $msg_special = 'Fehler: Die angegebene E-Mail-Adresse ist ungültig.';
     }
 }
 ?>
@@ -121,7 +173,7 @@ EOT;
       font-size: 40px;
     }
 
-/* Greyscale-Effekt für Bilder */
+/* Greyscale-Effekt für Bilder (funktioniert nicht im IE)*/
     .greyimg {filter:grayscale(75%)}
     .greyimg:hover {filter:grayscale(25%)}
 
@@ -244,6 +296,8 @@ EOT;
       <a href="#upcoming" onclick="closeNav()">Upcoming</a>
       <a href="#live" onclick="closeNav()">Live</a>
       <a href="#ep" onclick="closeNav()">EP</a>
+      <a href="#footer" onclick="closeNav(),document.getElementById('datenschutz').style.display='block'" style="font-size: 15px;display:inline-block;margin-top:16px">Datenschutz</a>
+      <a href="#footer" onclick="closeNav(),document.getElementById('impressum').style.display='block'" style="font-size: 15px;display:inline-block;margin-top:16px">Impressum</a>
     </div>
   </div>
 <!-- Container (BAND) -->
@@ -291,7 +345,7 @@ EOT;
     </div>
     <div class="w3-container w3-col l1 m2 s3 w3-center w3-padding"></div>
   </div>
-<!-- Container (MUSIC) -->
+<!-- Container -->
   <div class="w3-container w3-section w3-padding-32" style="padding:0;">
     <div class="w3-cell-row">
   <!-- Container (UPCOMING) -->
@@ -326,7 +380,7 @@ EOT;
           <div class="responsvid"><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/LpnD2aPqhAU?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
 	  <div class="w3-container w3-black"><p class="w3-text-orange w3-large" style="text-align:right;margin:0;padding:0">Lovesick in Hatred</p><p class="w3-text-white w3-tiny" style="text-align:right;margin:0;padding:0;padding-bottom:5px">Alte Zuckerfabrik Rostock, 27. März 2018.</p></div>
-          <p class="textlink_d" style="margin-top:50px;margin-bottom:50px;">Feuertaufe: Am 27. März standen wir erstmals auf der Bühne &ndash; zusammen mit <a href="https://www.facebook.com/modicumofhope/" target="_blank">Modicum of Hope</a>, <a href="https://www.facebook.com/RadagostBand" target="_blank">Radagost</a> und <a href="https://www.facebook.com/negraschus" target="_blank">Maik Negraschus</a>. Danke für den geilen Abend!</p><p style="margin-bottom:20px;"><button id="morevids_btn" class="w3-button w3-border w3-padding-small" onclick="anzeigeundhidebtn('morevids','morevids_btn')">Mehr Videos</button></p>
+          <p class="textlink_d" style="margin-top:50px;margin-bottom:50px;">Feuertaufe: Am 27. März standen wir erstmals auf der Bühne &ndash; zusammen mit <a href="https://www.facebook.com/modicumofhope/" target="_blank">Modicum of Hope</a>, <a href="https://www.facebook.com/RadagostBand" target="_blank">Radagost</a> und <a href="https://www.facebook.com/negraschus" target="_blank">Maik Negraschus</a>. Danke für den geilen Abend!</p><p style="margin-bottom:20px;"><button id="morevids_btn" class="w3-button w3-border w3-padding-small" onclick="anzeigeundhidebtn('morevids','morevids_btn')">Mehr Videos</button></p> <!-- (Button im IE nicht richtig angezeigt) -->
         </div>
         <div class="w3-container w3-card w3-center w3-margin-bottom morevids w3-animate-opacity w3-hide" style="padding:0;width:80%;margin:auto;">
           <div class="responsvid"><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Um56wapTaak?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -348,16 +402,16 @@ EOT;
     <p class="w3-large w3-wide"><img id="epcover" class="Image-zoom-effect" src="/hello-world/images/coverk.jpg" style="width:33%;float:left;margin-right:20px;margin-bottom:20px;">1. Point Of No Return<br>2. About Our Fate<br>3. Blood Of Innocence<br>4. Siren Singer<br></p><p class="w3-large">Derzeit laufen die Arbeiten an der EP <em>Concealed Strike</em> &ndash; unserer ersten handfesten Veröffentlichung. Drei rasante Songs aus dem LIVE-Repertoire werden darauf zu hören sein, zusammen mit dem ruhigeren Stück <em>About Our Fate</em>. Allesamt stammen sie noch aus der <a href="#geschichte">Vorzeit der Band</a>: Seitdem hat sich ihr Gesicht jedoch deutlich verändert. Neu arrangiert und eingespielt bekommen sie hier einen neuen Sound.</p>
   </div>
 <!-- Footer -->
-  <div class="w3-container w3-margin-top w3-padding-32 w3-dark-grey">
+  <div id="footer" class="w3-container w3-margin-top w3-padding-32 w3-dark-grey">
     <div class="w3-row">
       <div class="w3-third w3-padding">
         <h3 class="w3-center">Kontakt</h3>
 	<form method="post" style="width:80%;margin:auto">
-	  <input class="w3-input w3-dark-grey" type="text" name="conname" id="conname" placeholder="Name" required></input>
-	  <input class="w3-input w3-dark-grey" type="email" name="conemail" id="conemail" placeholder="E-Mail" required></input>
-	  <textarea style="width:100%;height:45px;resize:vertical;" class="w3-input w3-dark-grey" wrap="hard" name="connachricht" id="connachricht" placeholder="Nachricht" required></textarea>
+	  <input class="w3-input w3-dark-grey" type="text" name="name_contact" id="name_contact" placeholder="Name" required></input>
+	  <input class="w3-input w3-dark-grey" type="email" name="email_contact" id="email_contact" placeholder="E-Mail" required></input>
+	  <textarea style="width:100%;height:45px;resize:vertical;" class="w3-input w3-dark-grey" wrap="hard" name="nachricht_contact" id="nachricht_contact" placeholder="Nachricht" required></textarea>
 	<div class="w3-bar">
-	    <input class="w3-button w3-bar-item w3-border w3-dark-grey w3-margin-top w3-margin-bottom" type="submit" name="consubmit" value="Absenden" disabled></input>
+	    <input class="w3-button w3-bar-item w3-border w3-dark-grey w3-margin-top w3-margin-bottom" type="submit" name="submit_contact" value="Absenden" disabled></input>
 	</div>
 	</form>
       </div>
@@ -370,14 +424,57 @@ EOT;
       <div class="w3-third w3-padding w3-center">
         <h3>Referenz</h3>
 	<div class="w3-container textlink_d">
-	  <p style="margin-top:8px;"><a href="">Datenschutz</a><br><a href="">Impressum</a></p>
+	  <p style="margin-top:8px;"><a href="#footer" onclick="document.getElementById('datenschutz').style.display='block'">Datenschutz</a><br><a href="#footer" onclick="document.getElementById('impressum').style.display='block'">Impressum</a></p>
         </div>
       </div>
     </div>
   </div>
   <div class="w3-container w3-center" style="color:#fff;background-color:#444444;">
     <a href="#" class="w3-button w3-large w3-circle" style="margin-top:16px;"><i class="fa fa-angle-up fa-lg"></i></a>
-    <p style="color:#a7a7a7">&copy; Vicious Intentions 2018</p>
+    <p style="color:#a7a7a7">&copy;&nbsp;Vicious&nbsp;Intentions&nbsp;2018&nbsp;- All&nbsp;rights&nbsp;reserved</p>
+  </div>
+<!-- Modal (Datenschutz) -->
+  <div id="datenschutz" class="w3-modal w3-animate-opacity" style="background-color:rgba(0,0,0,0.8)">
+    <div class="w3-modal-content w3-dark-grey">
+      <div class="w3-container w3-padding-32" style="width:80%;margin:auto;">
+        <span onclick="document.getElementById('datenschutz').style.display='none'" class="w3-button w3-display-topright w3-large">&times;</span>
+        <h1 class="w3-center">Datenschutz</h1>
+	<h3 style="margin-top:80px;">Geltungsbereich</h3> 
+        <p class="textlink_d">Diese Datenschutzerklärung soll die Nutzer dieser Website gemäß der europäischen Datenschutzverordnung, des Bundesdatenschutzgesetzes und Telemediengesetzes über die Art, den Umfang und den Zweck der Erhebung und Verwendung personenbezogener Daten durch den Websitebetreiber Vicious Intentions informieren.<br>
+Der Websitebetreiber misst dem Datenschutz große Bedeutung zu und behandelt Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Vorschriften.<br>
+Bitte bedenken Sie, dass die Datenübertragung im Internet grundsätzlich mit Sicherheitslücken behaftet ist. Ein vollumfänglicher Schutz vor dem Zugriff durch Fremde ist nicht realisierbar.<br><br></p>
+	<h3>Zugriffsdaten</h3>
+	<p class="textlink_d">Der Websitebetreiber bzw. Seitenprovider erhebt Daten über Zugriffe auf die Seite und speichert diese als „Server-Logfiles" ab. Folgende Daten werden so protokolliert:<br></p><ul><li>Besuchte Webseite</li><li>Uhrzeit zum Zeitpunkt des Zugriffes</li><li>Menge der gesendeten Daten in Byte</li><li>Quelle/Verweis, von welchem Sie auf die Seite gelangten</li><li>Verwendeter Browser</li><li>Verwendetes Betriebssystem</li><li>Verwendete IP-Adresse, in anonymisierter Form</li></ul><p class="textlink_d">Die erhobenen Daten dienen lediglich statistischen Auswertungen und der Verbesserung der Website. Der Websitebetreiber behält sich allerdings vor, die Server-Logfiles nachträglich zu überprüfen, sollten konkrete Anhaltspunkte auf eine rechtswidrige Nutzung hinweisen.<br><br></p>
+	<h3>Umgang mit personenbezogenen Daten</h3>
+	<p class="textlink_d">Der Websitebetreiber erhebt, nutzt und gibt Ihre personenbezogenen Daten nur dann weiter, wenn dies im gesetzlichen Rahmen erlaubt ist oder Sie in die Datenerhebung einwilligen.<br> Als personenbezogene Daten gelten sämtliche Informationen, welche dazu dienen, Ihre Person zu bestimmen und welche zu Ihnen zurückverfolgt werden können – also beispielsweise Ihr Name, Ihre E-Mail-Adresse, Telefonnummer und IP-Adresse.<br><br></p>
+	<h3>Umgang mit Kontaktdaten</h3>
+	<p class="textlink_d">Nehmen Sie mit dem Websitebetreiber durch die angebotenen Kontaktmöglichkeiten Verbindung auf, werden Ihre Angaben gespeichert, damit auf diese zur Bearbeitung und Beantwortung Ihrer Anfrage zurückgegriffen werden kann. Ohne Ihre Einwilligung werden diese Daten nicht an Dritte weitergegeben. Nachdem der Zweck für die Aufbewahrung und Verwendung der Daten entfällt, werden diese gelöscht, sofern dies nicht einer gesetzlichen Pflicht zu Aufbewahrung widerspricht.<br><br></p>
+	<h3>Nutzung von Youtube-Videos mit Framing-Technik</h3>
+	<p class="textlink_d">Diese Website nutzt Plugins der Firma YouTube (YouTube LLC, 901 Cherry Ave., San Bruno, CA 94066, USA. Im Besitz und verteten durch: Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA.), um Youtube-Videos mit Framing-Technik direkt auf den Webseiten von Vicious Intentions anzeigen und abspielen lassen zu können. Die Nutzung des Dienstes geschieht zum Zweck der besseren Darstellung von Informationen auf der Website.<br>
+Die Youtube-Videos sind im erweiterten Datenschutzmodus eingebunden. Das bedeutet, dass beim Laden unserer Seiten, auf denen YouTube-Videos eingebunden sind, keine Cookies von YouTube im Browser des Nutzers gespeichert werden. Dennoch wird, auch wenn die Videos nicht abgespielt werden, eine Verbindung zu den Servern von YouTube und dem DoubleClick-Netzwerk von Google hergestellt. Dabei wird den Servern mitgeteilt, welche unserer Seiten Sie besucht haben. Sobald das Video abgespielt wird, werden weitere Datenverarbeitungsvorgänge ausgelöst. Der Websitebetreiber hat keinen Einfluss auf die Natur und den Umfang der Daten, welche das Plugin an die Server von YouTube und DoubleClick übermittelt.<br>
+Weitere Informationen zum Umgang mit Nutzerdaten durch Google finden Sie in der entsprechenden <a href="https://policies.google.com/privacy?hl=de&gl=de" target="_blank">Datenschutzerklärung des Unternehmens</a>.<br><br></p>
+	<h3>Rechte des Nutzers: Auskunft, Berichtigung und Löschung</h3>
+	<p class="textlink_d">Sie als Nutzer erhalten auf Antrag Ihrerseits kostenlose Auskunft darüber, welche personenbezogenen Daten über Sie gespeichert wurden. Sofern Ihr Wunsch nicht mit einer gesetzlichen Pflicht zur Aufbewahrung von Daten (z.&nbsp;B. Vorratsdatenspeicherung) kollidiert, haben Sie ein Anrecht auf Berichtigung falscher Daten und auf die Sperrung oder Löschung Ihrer personenbezogenen Daten.<br><br></p>	
+        <p class="w3-large" style="margin-bottom:80px;"></p>
+	<span onclick="document.getElementById('datenschutz').style.display='none'" class="w3-button w3-display-bottommiddle w3-large">&times;</span>
+      </div>
+    </div>
+  </div>
+<!-- Modal (Impressum) -->
+  <div id="impressum" class="w3-modal w3-animate-opacity" style="background-color:rgba(0,0,0,0.8)">
+    <div class="w3-modal-content w3-dark-grey">
+      <div class="w3-container w3-padding-32" style="width:80%;margin:auto;">
+        <span onclick="document.getElementById('impressum').style.display='none'" class="w3-button w3-display-topright w3-large">&times;</span>
+        <h1 class="w3-center">Impressum</h1>
+	<h3 style="margin-top:80px;">Verantwortlich&nbsp;für den&nbsp;Inhalt</h3> 
+        <p class="textlink_d">Vicious Intentions GbR<br>Straße 12<br>12345 Stadt</p>
+        <p class="textlink_d">12345 6789012<br>viciousintentions[at]gmail.com<br><br></p>
+	<h3>Haftungsauschluss</h3>
+	<p class="textlink_d"><b>Haftung für Inhalte: </b>Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.<br><br><b>Haftung für Links: </b>Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.<br><br><b>Urheberrecht: </b>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.<br><br><b>Datenschutz: </b>Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder eMail-Adressen) erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben. Näheres dazu findet ihr in <a href="#footer" onclick="document.getElementById('impressum').style.display='none',document.getElementById('datenschutz').style.display='block'">unserer Datenschutzerklärung</a>.<br><br>Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten durch Dritte zur Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird hiermit ausdrücklich widersprochen. Die Betreiber der Seiten behalten sich ausdrücklich rechtliche Schritte im Falle der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-Mails, vor.<br><br></p>
+        <p class="w3-large" style="margin-bottom:80px;"></p>
+	<span onclick="document.getElementById('impressum').style.display='none'" class="w3-button w3-display-bottommiddle w3-large">&times;</span>
+      </div>
+    </div>
   </div>
 <!-- Modal (Tickets SPH Hamburg) -->
   <div id="tickets" class="w3-modal w3-animate-opacity" style="background-color:rgba(0,0,0,0.8)">
@@ -391,12 +488,12 @@ EOT;
 	<p class="w3-large" style="margin-bottom:40px;">Seid ihr dabei? Dann füllt einfach das Anmeldeformular aus. Wir halten euch dann auf dem Laufenden.</p>
         <form class="w3-container" method="post">
           <h3>Anmeldung</h3>
-	  <input class="w3-input" type="text" name="name" id="name" placeholder="Name" required>
-	  <input class="w3-input" type="email" name="email" id="email" placeholder="E-Mail" required>
-	  <input class="w3-input" type="number" name="anzahl" id="anzahl" placeholder="Anzahl der Personen" min="1" required>
-	  <input class="w3-input" type="text" name="notes" id="notes" placeholder="Anmerkungen (optional)">
+	  <input class="w3-input" type="text" name="name_special" id="name_special" placeholder="Name" required>
+	  <input class="w3-input" type="email" name="email_special" id="email_special" placeholder="E-Mail" required>
+	  <input class="w3-input" type="number" name="anzahl_special" id="anzahl_special" placeholder="Anzahl der Personen" min="1" required>
+	  <input class="w3-input" type="text" name="notes_special" id="notes_special" placeholder="Anmerkungen (optional)">
 	  <div class="w3-bar">
-	    <input class="w3-button w3-bar-item w3-border w3-dark-grey w3-margin-top w3-margin-bottom" type="submit" name="submit" value="Absenden" disabled>
+	    <input class="w3-button w3-bar-item w3-border w3-dark-grey w3-margin-top w3-margin-bottom" type="submit" name="submit_special" value="Absenden" disabled>
 	  </div>
 	  <hr>
 	  <p class="w3-tiny">Datenschutzhinweis: Die hier erhobenen personengebundenen Daten nutzen wir ausschließlich dafür, mit euch Kontakt aufzunehmen. Sie werden nicht an Dritte weitergegeben und nach dem zweckmäßigen Gebrauch wieder gelöscht.</p>
@@ -410,11 +507,25 @@ EOT;
   </div>
 <!-- Modal (Bestätigung Kontaktformular Tickets SPH Hamburg) -->
 <!--
-  <?php if (!empty($msg)) {
+  <?php if (!empty($msg_special)) {
         echo "<div id='ticketsconfirm' class='w3-modal w3-animate-opacity' style='background-color:rgba(0,0,0,0.8);display:block;'>";
         echo "<div class='w3-modal-content'>";
         echo "<div class='w3-container w3-padding-32' style='width:80%;margin:auto;'>";
-        echo "<p class='w3-large w3-center' style='margin-top:80px;margin-bottom:80px;'>$msg</p>";
+        echo "<p class='w3-large w3-center' style='margin-top:80px;margin-bottom:80px;'>$msg_special</p>";
+        echo "<span onclick='closeticketsconfirm()' class='w3-button w3-display-bottommiddle w3-large'>&times;</span>";
+	echo "</div>";
+	echo "</div>";
+	echo "</div>";
+     }
+  ?>
+-->
+<!-- Modal (Bestätigung Kontaktformular) -->
+<!--
+  <?php if (!empty($msg_contact)) {
+        echo "<div id='ticketsconfirm' class='w3-modal w3-animate-opacity' style='background-color:rgba(0,0,0,0.8);display:block;'>";
+        echo "<div class='w3-modal-content'>";
+        echo "<div class='w3-container w3-padding-32' style='width:80%;margin:auto;'>";
+        echo "<p class='w3-large w3-center' style='margin-top:80px;margin-bottom:80px;'>$msg_contact</p>";
         echo "<span onclick='closeticketsconfirm()' class='w3-button w3-display-bottommiddle w3-large'>&times;</span>";
 	echo "</div>";
 	echo "</div>";
@@ -424,6 +535,9 @@ EOT;
 -->
 
 <script>
+//
+// JavaScript
+//
 // horizontale Menüleiste auf und unter dem Hero-Image unterschiedlich anzeigen
 window.onscroll = function() {changenavbar()};
 function changenavbar() {
