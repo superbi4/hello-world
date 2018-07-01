@@ -1,4 +1,4 @@
-<!-- Letztes Update: 28. Juni 2018 16:02 -->
+<!-- Letztes Update: 2. Juli 2018 1:44 -->
 <!--
 <?php
 //Import PHPMailer classes into the global namespace
@@ -120,7 +120,6 @@ EOT;
 }
 ?>
 -->
-
 <!DOCTYPE html>
 <html lang="de">
 
@@ -240,6 +239,21 @@ EOT;
       .mobile {display:table-cell;width:49.9999%!important}
       #epcover {width: 50%!important}
     }
+    @media screen and (max-width:1180px) {
+      #headerkl {display:block!important}
+      #headergr {display:none!important}
+      #headermax {display:none!important}
+    }
+    @media screen and (min-width:1181px) and (max-width:1920px) {
+      #headerkl {display:none!important}
+      #headergr {display:block!important}
+      #headermax {display:none!important}
+    }
+    @media screen and (min-width:1921px) {
+      #headerkl {display:none!important}
+      #headergr {display:none!important}
+      #headermax {display:block!important}
+    }
 
 /* Zoom-Effekt für Bilder */
     .Image-zoom-effect {
@@ -278,8 +292,16 @@ EOT;
 </head>
 <body>
 <!-- Hero-Image -->
-  <div class="w3-container" style="padding:0;" id="band">
-    <img src="/hello-world/images/header_mixed.jpg" style="width: 100%;" id="header-img">
+  <div class="w3-container" style="margin:0;padding:0;" id="band">
+    <div class="w3-container" style="padding:0;" id="headerkl">
+      <img class="header-img" src="/hello-world/images/header_kl.jpg" style="width: 100%">
+    </div>
+    <div class="w3-container" style="padding:0;" id="headergr">
+      <img class="header-img" src="/hello-world/images/header_gr.jpg" style="width: 100%">
+    </div>
+    <div class="w3-container" style="padding:0;" id="headermax">
+      <img class="header-img" src="/hello-world/images/header_max.jpg" style="width: 100%">
+    </div>
   </div>
 <!-- Navbar -->
   <div class="w3-top">
@@ -534,7 +556,6 @@ Weitere Informationen zum Umgang mit Nutzerdaten durch Google finden Sie in der 
      }
   ?>
 -->
-
 <script>
 //
 // JavaScript
@@ -551,8 +572,15 @@ function changenavbar() {
     var socialytg = document.getElementById("social_yt_g");
     var socialbck = document.getElementById("social_bc_k");
     var socialbcg = document.getElementById("social_bc_g");
-    var header = document.getElementById("header-img");
-    var headergr = header.height;
+    var header = document.getElementsByClassName("header-img");
+    var headergr = 1;
+    if (window.matchMedia("(max-width:1180px)").matches) {
+      headergr = header[0].height;
+    } else if (window.matchMedia("(min-width:1181px), (max-width:1920px)").matches) {
+      headergr = header[1].height;
+    } else if (window.matchMedia("(min-width:1921px)").matches) {
+      headergr = header[2].height;
+    }
     if (document.documentElement.scrollTop > headergr || document.body.scrollTop > headergr) {
         navg.className = "w3-bar w3-large w3-white w3-opacity";
         menusyidk.className = "w3-button w3-large w3-text-black w3-white w3-opacity w3-right";
