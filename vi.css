@@ -67,6 +67,8 @@
        display:inline-block;
        margin-top:16px;
     }
+/* EP-Tracklist */
+      .eptracklist {font-size:18px!important;letter-spacing:2px!important}
 /* Breakpoints */
     @media screen and (max-height: 450px) {
       .overlay a {font-size: 20px}
@@ -75,6 +77,9 @@
        top: 15px;
        right: 35px;
       }
+    }
+    @media screen and (max-width: 380px) {
+      .eptracklist {font-size:16px!important;letter-spacing:2px!important}
     }
     @media screen and (max-width:450px) {
       #logo {width: 70%;}
@@ -89,12 +94,14 @@
       #navbar_g {display: none!important}
       #navbar_k {display: block!important}
       .mobile {display:block;width:100%!important}
+      .eptracklist {font-size:20px!important;letter-spacing:2px!important}
     }
     @media screen and (max-width:680px) {
       #epcover {width: 100%!important}
     }
     @media screen and (min-width:681px) {
       #epcover {width: 50%!important}
+      .eptracklist {font-size:18px!important;letter-spacing:2px!important}
     }
     @media screen and (min-width:801px) {
       #logo {width: 50%;}
@@ -103,10 +110,12 @@
       #navbar_k {display: none!important}
       .mobile {display:block;width:100%!important}
       #epcover {width: 50%!important}
+      .eptracklist {font-size:19px!important;letter-spacing:2px!important}
     }
     @media screen and (min-width:950px) {
       .mobile {display:table-cell;width:49.9999%!important}
       #epcover {width: 50%!important}
+      .eptracklist {font-size:20px!important;letter-spacing:4px!important}
     }
     @media screen and (max-width:1180px) {
       #headerkl {display:block!important}
@@ -120,6 +129,7 @@
     }
     @media screen and (min-width:1366px) {
       #geschichte p,.vidtitle,.eptext,.largetext {font-size:20px!important}
+      .eptracklist {font-size:19px!important;letter-spacing:8px!important}
       .xlargetext {font-size:26px!important}
       .overlay a {font-size:40px!important}
       .overlay .closebtn {font-size:44px!important}
@@ -141,6 +151,7 @@
     }
     @media screen and (min-width:1440px) {
       #geschichte p,.vidtitle,.eptext,.largetext {font-size:22px!important}
+      .eptracklist {font-size:21px!important;letter-spacing:8px!important}
       .xlargetext {font-size:28px!important}
       .overlay a {font-size:41px!important}
       .overlay .closebtn {font-size:45px!important}
@@ -162,6 +173,7 @@
     }
     @media screen and (min-width:1536px) {
       #geschichte p,.vidtitle,.eptext,.largetext {font-size:23px!important}
+      .eptracklist {font-size:22px!important;letter-spacing:8px!important}
       .xlargetext {font-size:29px!important}
       .overlay a {font-size:42px!important}
       .overlay .closebtn {font-size:46px!important}
@@ -183,6 +195,7 @@
     }
     @media screen and (min-width:1680px) {
       #geschichte p,.vidtitle,.eptext,.largetext {font-size:24px!important}
+      .eptracklist {font-size:23px!important;letter-spacing:8px!important}
       .xlargetext {font-size:30px!important}
       .overlay a {font-size:47px!important}
       .overlay .closebtn {font-size:52px!important}
@@ -204,6 +217,7 @@
     }
     @media screen and (min-width:1815px) {
       #geschichte p,.vidtitle,.eptext,.largetext {font-size:26px!important}
+      .eptracklist {font-size:25px!important;letter-spacing:8px!important}
       .xlargetext {font-size:32px!important}
       .overlay a {font-size:56px!important}
       .overlay .closebtn {font-size:60px!important}
@@ -228,6 +242,7 @@
       #headergr {display:none!important}
       #headermax {display:block!important}
       #geschichte p,.vidtitle,.eptext,.largetext {font-size:28px!important}
+      .eptracklist {font-size:27px!important;letter-spacing:8px!important}
       .xlargetext {font-size:34px!important}
       .overlay a {font-size:59px!important}
       .overlay .closebtn {font-size:96px!important}
@@ -249,6 +264,7 @@
     }
     @media screen and (min-width:2032px) {
       #geschichte p,.vidtitle,.eptext,.largetext {font-size:30px!important}
+      .eptracklist {font-size:29px!important;letter-spacing:10px!important}
       .xlargetext {font-size:39px!important}
       .overlay a {font-size:61px!important}
       .overlay .closebtn {font-size:95px!important}
@@ -270,6 +286,7 @@
     }
     @media screen and (min-width:2196px) {
       #geschichte p,.vidtitle,.eptext,.largetext {font-size:32px!important}
+      .eptracklist {font-size:31px!important;letter-spacing:10px!important}
       .xlargetext {font-size:41px!important}
       .overlay a {font-size:63px!important}
       .overlay .closebtn {font-size:97px!important}
@@ -291,6 +308,7 @@
     }
     @media screen and (min-width:2299px) {
       #geschichte p,.vidtitle,.eptext,.largetext {font-size:34px!important}
+      .eptracklist {font-size:33px!important;letter-spacing:10px!important}
       .xlargetext {font-size:45px!important}
       .overlay a {font-size:68px!important}
       .overlay .closebtn {font-size:102px!important}
@@ -312,6 +330,7 @@
     }
     @media screen and (min-width:2560px) {
       #geschichte p,.vidtitle,.eptext,.largetext {font-size:38px!important}
+      .eptracklist {font-size:37px!important;letter-spacing:10px!important}
       .xlargetext {font-size:50px!important}
       .overlay a {font-size:72px!important}
       .overlay .closebtn {font-size:106px!important}
@@ -333,6 +352,7 @@
     }
     @media screen and (min-width:2800px) {
       #geschichte p,.vidtitle,.eptext,.largetext {font-size:42px!important}
+      .eptracklist {font-size:41px!important;letter-spacing:10px!important}
       .xlargetext {font-size:58px!important}
       .overlay a {font-size:74px!important}
       .overlay .closebtn {font-size:108px!important}
@@ -354,6 +374,7 @@
     }
     @media screen and (min-width:3000px) {
       #geschichte p,.vidtitle,.eptext,.largetext {font-size:44px!important}
+      .eptracklist {font-size:43px!important;letter-spacing:10px!important}
       .xlargetext {font-size:63px!important}
       .overlay a {font-size:86px!important}
       .overlay .closebtn {font-size:120px!important}
@@ -376,6 +397,7 @@
     }
     @media screen and (min-width:3840px) {
       #geschichte p,.vidtitle,.eptext,.largetext {font-size:57px!important}
+      .eptracklist {font-size:55px!important;letter-spacing:10px!important}
       .xlargetext {font-size:77px!important}
       .overlay a {font-size:116px!important}
       .overlay .closebtn {font-size:130px!important}
@@ -398,6 +420,7 @@
     }
     @media screen and (min-width:4000px) {
       #geschichte p,.vidtitle,.eptext,.largetext {font-size:60px!important}
+      .eptracklist {font-size:58px!important;letter-spacing:10px!important}
       .xlargetext {font-size:80px!important}
       .overlay a {font-size:128px!important}
       .overlay .closebtn {font-size:132px!important}
