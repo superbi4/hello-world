@@ -21,8 +21,8 @@ if (array_key_exists('email_contact', $_POST)) {
     $mail_contact->Host = 'mail.gmx.net';
     $mail_contact->Port = 587;
     $mail_contact->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail_contact->Username = 'deus_superbia@gmx.net';            // SMTP username
-    $mail_contact->Password = 'k7F3D1p9T';                        // SMTP password
+    $mail_contact->Username = 'mail@example.com';                 // SMTP username
+    $mail_contact->Password = 'secret';                           // SMTP password
     $mail_contact->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
     $mail_contact->CharSet = 'UTF-8';				  // Codierung erzwingen, um Umlaute korrekt anzuzeigen
     //Use a fixed address in your own domain as the from address
@@ -30,7 +30,7 @@ if (array_key_exists('email_contact', $_POST)) {
     //and will cause your messages to fail SPF checks
     $mail_contact->setFrom('vimailer@gmx.net');
     //Send the message to yourself, or whoever should receive contact for submissions
-    $mail_contact->addAddress('nate45@gmx.net');
+    $mail_contact->addAddress('example@example.com');
     //Put the submitter's address in a reply-to header
     //This will fail if the address provided is invalid,
     //in which case we should ignore the whole request
@@ -71,8 +71,8 @@ if (array_key_exists('email_special', $_POST)) {
     $mail_special->Host = 'mail.gmx.net';
     $mail_special->Port = 587;
     $mail_special->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail_special->Username = 'deus_superbia@gmx.net';            // SMTP username
-    $mail_special->Password = 'k7F3D1p9T';                        // SMTP password
+    $mail_special->Username = 'example@example.com';              // SMTP username
+    $mail_special->Password = 'secret';                           // SMTP password
     $mail_special->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
     $mail_special->CharSet = 'UTF-8';				  // Codierung erzwingen, um Umlaute korrekt anzuzeigen
     //Use a fixed address in your own domain as the from address
@@ -80,8 +80,8 @@ if (array_key_exists('email_special', $_POST)) {
     //and will cause your messages to fail SPF checks
     $mail_special->setFrom('vimailer@gmx.net');
     //Send the message to yourself, or whoever should receive contact for submissions
-    $mail_special->addReplyTo('nate45@gmx.net');
-    $mail_special->addBCC('veilingdistress@gmx.net');
+    $mail_special->addReplyTo('example@example.com');
+    $mail_special->addBCC('example@example.com');
     //Put the submitter's address in a reply-to header
     //This will fail if the address provided is invalid,
     //in which case we should ignore the whole request
@@ -276,7 +276,7 @@ EOT;
 	  <input class="w3-input w3-dark-grey footertext" type="email" name="email_contact" id="email_contact" placeholder="E-Mail" required></input>
 	  <textarea style="width:100%;height:3em;resize:vertical;" class="w3-input w3-dark-grey footertext" wrap="hard" name="nachricht_contact" id="nachricht_contact" placeholder="Nachricht" required></textarea>
 	<div class="w3-bar">
-	    <input class="w3-button w3-bar-item w3-border w3-dark-grey w3-margin-top w3-margin-bottom relbuttons" type="submit" name="submit_contact" value="Absenden"></input>
+	    <input class="w3-button w3-bar-item w3-border w3-dark-grey w3-margin-top w3-margin-bottom relbuttons" type="submit" name="submit_contact" value="Absenden" disabled></input>
 	</div>
 	</form>
       </div>
@@ -358,7 +358,7 @@ Weitere Informationen zum Umgang mit Nutzerdaten durch Google finden Sie in der 
 	  <input class="w3-input mediumtext" type="number" name="anzahl_special" id="anzahl_special" placeholder="Anzahl der Personen" min="1" required>
 	  <input class="w3-input mediumtext" type="text" name="notes_special" id="notes_special" placeholder="Anmerkungen (optional)">
 	  <div class="w3-bar">
-	    <input class="w3-button w3-bar-item w3-border w3-dark-grey w3-margin-top w3-margin-bottom relbuttons" type="submit" name="submit_special" value="Absenden">
+	    <input class="w3-button w3-bar-item w3-border w3-dark-grey w3-margin-top w3-margin-bottom relbuttons" type="submit" name="submit_special" value="Absenden" disabled>
 	  </div>
 	  <hr>
 	  <p class="w3-tiny tinytext">Datenschutzhinweis: Die hier erhobenen personengebundenen Daten nutzen wir ausschließlich dafür, mit euch Kontakt aufzunehmen. Sie werden nicht an Dritte weitergegeben und nach dem zweckmäßigen Gebrauch wieder gelöscht.</p>
