@@ -21,8 +21,8 @@ if (array_key_exists('email_contact', $_POST)) {
     $mail_contact->Host = 'mail.gmx.net';
     $mail_contact->Port = 587;
     $mail_contact->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail_contact->Username = 'user@example.com';                 // SMTP username
-    $mail_contact->Password = 'secret';                           // SMTP password
+    $mail_contact->Username = 'deus_superbia@gmx.net';            // SMTP username
+    $mail_contact->Password = 'k7F3D1p9T';                        // SMTP password
     $mail_contact->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
     $mail_contact->CharSet = 'UTF-8';				  // Codierung erzwingen, um Umlaute korrekt anzuzeigen
     //Use a fixed address in your own domain as the from address
@@ -30,12 +30,11 @@ if (array_key_exists('email_contact', $_POST)) {
     //and will cause your messages to fail SPF checks
     $mail_contact->setFrom('vimailer@gmx.net');
     //Send the message to yourself, or whoever should receive contact for submissions
-    $mail_contact->addReplyTo('viciousintentions@gmail.com');
-    $mail_contact->addBCC('viciousintentions@gmail.com');
+    $mail_contact->addAddress('nate45@gmx.net');
     //Put the submitter's address in a reply-to header
     //This will fail if the address provided is invalid,
     //in which case we should ignore the whole request
-    if ($mail_contact->addAddress($_POST['email_contact'])) {
+    if ($mail_contact->addReplyTo($_POST['email_contact'])) {
         $mail_contact->Subject = 'Nachricht über das Kontaktformular';
         //Keep it simple - don't use HTML
         $mail_contact->isHTML(false);
@@ -72,8 +71,8 @@ if (array_key_exists('email_special', $_POST)) {
     $mail_special->Host = 'mail.gmx.net';
     $mail_special->Port = 587;
     $mail_special->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail_special->Username = 'user@example.com';                 // SMTP username
-    $mail_special->Password = 'secret';                           // SMTP password
+    $mail_special->Username = 'deus_superbia@gmx.net';            // SMTP username
+    $mail_special->Password = 'k7F3D1p9T';                        // SMTP password
     $mail_special->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
     $mail_special->CharSet = 'UTF-8';				  // Codierung erzwingen, um Umlaute korrekt anzuzeigen
     //Use a fixed address in your own domain as the from address
@@ -81,8 +80,8 @@ if (array_key_exists('email_special', $_POST)) {
     //and will cause your messages to fail SPF checks
     $mail_special->setFrom('vimailer@gmx.net');
     //Send the message to yourself, or whoever should receive contact for submissions
-    $mail_special->addReplyTo('viciousintentions@gmail.com');
-    $mail_special->addBCC('viciousintentions@gmail.com');
+    $mail_special->addReplyTo('nate45@gmx.net');
+    $mail_special->addBCC('veilingdistress@gmx.net');
     //Put the submitter's address in a reply-to header
     //This will fail if the address provided is invalid,
     //in which case we should ignore the whole request
@@ -246,7 +245,7 @@ EOT;
           <div class="responsvid"><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/LpnD2aPqhAU?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
 	  <div class="w3-container w3-black"><p class="w3-text-orange w3-large vidtitle" style="text-align:right;margin:0;padding:0">Lovesick in Hatred</p><p class="w3-text-white w3-tiny viddate" style="text-align:right;margin:0;padding:0;padding-bottom:2em">Alte Zuckerfabrik Rostock, 27. März 2018.</p></div>
-          <p class="textlink_d livetext" style="margin-top:3em;margin-bottom:3em;">Feuertaufe: Am 27. März standen wir erstmals auf der Bühne &ndash; zusammen mit <a href="https://www.facebook.com/modicumofhope/" target="_blank">Modicum of Hope</a>, <a href="https://www.facebook.com/RadagostBand" target="_blank">Radagost</a> und <a href="https://www.facebook.com/negraschus" target="_blank">Maik Negraschus</a>. Danke für den geilen Abend!</p><p style="margin-bottom:1.5em"><button id="morevids_btn" class="w3-button w3-border w3-padding-small relbuttons" onclick="anzeigeundhidebtn('morevids','morevids_btn')">Mehr Videos</button></p> <!-- (Button im IE nicht richtig angezeigt) -->
+          <p class="textlink_d livetext" style="margin-top:3em;margin-bottom:3em;">Feuertaufe: Am 27. März standen wir erstmals auf der Bühne &ndash; zusammen mit <a href="https://www.facebook.com/modicumofhope/" target="_blank">Modicum of Hope</a>, <a href="https://www.facebook.com/RadagostBand" target="_blank">Radagost</a> und <a href="https://www.facebook.com/negraschus" target="_blank">Maik Negraschus</a>. Danke für den geilen Abend!</p><p style="margin-bottom:1.5em;"><button id="morevids_btn" class="w3-button w3-border w3-padding-small relbuttons" onclick="anzeigeundhidebtn('morevids','morevids_btn')">Mehr Videos</button></p> <!-- (Button im IE nicht richtig angezeigt) -->
         </div>
         <div class="w3-container w3-card w3-center w3-margin-bottom morevids w3-animate-opacity w3-hide" style="padding:0;width:80%;margin-left:auto;margin-right:auto">
           <div class="responsvid"><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Um56wapTaak?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -265,7 +264,7 @@ EOT;
   <div class="w3-container textlink_h" style="width:80%;margin-left:auto;margin-right:auto;margin-bottom:4em;margin-top:-1em" id="ep">
     <h1 class="w3-center conthead">EP: <em>CONCEALED STRIKE</em></h1>
     <p class="w3-xlarge w3-text-red w3-center xlargetext" style="margin-bottom:2em">work in progress <i class="fa fa-gavel"></i></p>
-    <p class="w3-large w3-wide eptext"><img id="epcover" class="Image-zoom-effect" src="/hello-world/images/coverk.jpg" style="float:left;margin-right:1em;margin-bottom:1em;">1. Point Of No Return<br>2. About Our Fate<br>3. Blood Of Innocence<br>4. Siren Singer<br></p><p class="w3-large eptext">Derzeit laufen die Arbeiten an der EP <em>Concealed Strike</em> &ndash; unserer ersten handfesten Veröffentlichung. Drei rasante Songs aus dem LIVE-Repertoire werden darauf zu hören sein, zusammen mit dem ruhigeren Stück <em>About Our Fate</em>. Allesamt stammen sie noch aus der <a href="#geschichte">Vorzeit der Band</a>: Seitdem hat sich ihr Gesicht jedoch deutlich verändert. Neu arrangiert und eingespielt bekommen sie hier einen neuen Sound.</p>
+    <p class="eptracklist"><img id="epcover" class="Image-zoom-effect" src="/hello-world/images/coverk.jpg" style="float:left;margin-right:1em;margin-bottom:1em;">1. Point Of No Return<br>2. About Our Fate<br>3. Blood Of Innocence<br>4. Siren Singer<br></p><p class="w3-large eptext">Derzeit laufen die Arbeiten an der EP <em>Concealed Strike</em> &ndash; unserer ersten handfesten Veröffentlichung. Drei rasante Songs aus dem LIVE-Repertoire werden darauf zu hören sein, zusammen mit dem ruhigeren Stück <em>About Our Fate</em>. Allesamt stammen sie noch aus der <a href="#geschichte">Vorzeit der Band</a>: Seitdem hat sich ihr Gesicht jedoch deutlich verändert. Neu arrangiert und eingespielt bekommen sie hier einen neuen Sound.</p>
   </div>
 <!-- Footer -->
   <div id="footer" class="w3-container w3-margin-top w3-padding-32 w3-dark-grey">
@@ -277,7 +276,7 @@ EOT;
 	  <input class="w3-input w3-dark-grey footertext" type="email" name="email_contact" id="email_contact" placeholder="E-Mail" required></input>
 	  <textarea style="width:100%;height:3em;resize:vertical;" class="w3-input w3-dark-grey footertext" wrap="hard" name="nachricht_contact" id="nachricht_contact" placeholder="Nachricht" required></textarea>
 	<div class="w3-bar">
-	    <input class="w3-button w3-bar-item w3-border w3-dark-grey w3-margin-top w3-margin-bottom relbuttons" type="submit" name="submit_contact" value="Absenden" disabled></input>
+	    <input class="w3-button w3-bar-item w3-border w3-dark-grey w3-margin-top w3-margin-bottom relbuttons" type="submit" name="submit_contact" value="Absenden"></input>
 	</div>
 	</form>
       </div>
@@ -359,7 +358,7 @@ Weitere Informationen zum Umgang mit Nutzerdaten durch Google finden Sie in der 
 	  <input class="w3-input mediumtext" type="number" name="anzahl_special" id="anzahl_special" placeholder="Anzahl der Personen" min="1" required>
 	  <input class="w3-input mediumtext" type="text" name="notes_special" id="notes_special" placeholder="Anmerkungen (optional)">
 	  <div class="w3-bar">
-	    <input class="w3-button w3-bar-item w3-border w3-dark-grey w3-margin-top w3-margin-bottom relbuttons" type="submit" name="submit_special" value="Absenden" disabled>
+	    <input class="w3-button w3-bar-item w3-border w3-dark-grey w3-margin-top w3-margin-bottom relbuttons" type="submit" name="submit_special" value="Absenden">
 	  </div>
 	  <hr>
 	  <p class="w3-tiny tinytext">Datenschutzhinweis: Die hier erhobenen personengebundenen Daten nutzen wir ausschließlich dafür, mit euch Kontakt aufzunehmen. Sie werden nicht an Dritte weitergegeben und nach dem zweckmäßigen Gebrauch wieder gelöscht.</p>
@@ -375,7 +374,7 @@ Weitere Informationen zum Umgang mit Nutzerdaten durch Google finden Sie in der 
 <!--
   <?php if (!empty($msg_special)) {
         echo "<div id='ticketsconfirm' class='w3-modal w3-animate-opacity' style='background-color:rgba(0,0,0,0.8);display:block;'>";
-        echo "<div class='w3-modal-content'>";
+        echo "<div class='w3-modal-content' style='width:80%;margin-right:auto;margin-left:auto'>";
         echo "<div class='w3-container w3-padding-32' style='width:80%;margin-left:auto;margin-right:auto'>";
         echo "<p class='w3-large w3-center mediumtext' style='margin-top:4em;margin-bottom:4em;'>$msg_special</p>";
         echo "<span onclick='closeticketsconfirm()' class='w3-button w3-display-bottommiddle w3-large modalclose'>&times;</span>";
@@ -389,7 +388,7 @@ Weitere Informationen zum Umgang mit Nutzerdaten durch Google finden Sie in der 
 <!--
   <?php if (!empty($msg_contact)) {
         echo "<div id='ticketsconfirm' class='w3-modal w3-animate-opacity' style='background-color:rgba(0,0,0,0.8);display:block;'>";
-        echo "<div class='w3-modal-content'>";
+        echo "<div class='w3-modal-content' style='width:80%;margin-right:auto;margin-left:auto'>";
         echo "<div class='w3-container w3-padding-32' style='width:80%;margin:auto;'>";
         echo "<p class='w3-large w3-center mediumtext' style='margin-top:4em;margin-bottom:4em'>$msg_contact</p>";
         echo "<span onclick='closeticketsconfirm()' class='w3-button w3-display-bottommiddle w3-large modalclose'>&times;</span>";
@@ -399,7 +398,6 @@ Weitere Informationen zum Umgang mit Nutzerdaten durch Google finden Sie in der 
      }
   ?>
 -->
-
 <script>
 //
 // JavaScript
