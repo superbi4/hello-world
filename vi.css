@@ -1,0 +1,453 @@
+    html,body {line-height: 1.8;}
+
+/* Overlay für das Hauptmenü */
+    .overlay {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: rgb(0,0,0);
+      background-color: rgba(0,0,0, 0.9);
+      overflow-x: hidden;
+      transition: 0.5s;
+    }
+    .overlay-content {
+      position: relative;
+      top: 15%;
+      width: 100%;
+      text-align: center;
+      margin-top: 30px;
+    }
+    .overlay a {
+      padding: 8px;
+      text-decoration: none;
+      font-size: 36px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+    .overlay a:hover, .overlay a:focus {
+      color: #f1f1f1;
+    }
+    .overlay .closebtn {
+      position: absolute;
+      top: 15px;
+      right: 40px;
+      font-size: 40px;
+    }
+/* Greyscale-Effekt für Bilder (funktioniert nicht im IE)*/
+    .greyimg {filter:grayscale(75%)}
+    .greyimg:hover {filter:grayscale(25%)}
+
+/* Text-Link-Design dunkel */
+    .textlink_d a:link, .textlink_d a:visited {
+      text-decoration: none;
+      color: #a7a7a7;
+    }
+    .textlink_d a:hover {color: #f1f1f1;}
+    .textlink_d a:active {
+      text-decoration: none;
+      color: #a7a7a7;
+    }
+/* Text-Link-Design hell */
+    .textlink_h a:link, .textlink_h a:visited {
+      text-decoration: none;
+      color: #818181;
+    }
+    .textlink_h a:hover {color: #b3b3b3;}
+    .textlink_h a:active {
+      text-decoration: none;
+      color: #818181;
+    }
+/* Referenz im Hauptmenü */
+    .overlay .overlay-content .referenz {
+       font-size:15px;
+       display:inline-block;
+       margin-top:16px;
+    }
+/* Breakpoints */
+    @media screen and (max-height: 450px) {
+      .overlay a {font-size: 20px}
+      .overlay .closebtn {
+       font-size: 40px;
+       top: 15px;
+       right: 35px;
+      }
+    }
+    @media screen and (max-width:450px) {
+      #logo {width: 70%;}
+      #social_fb_g,#social_fb_k,#social_yt_g,#social_yt_k,#social_bc_g,#social_bc_k {display: none!important}
+      #navbar_g {display: none!important}
+      #navbar_k {display: block!important}
+      .mobile {display:block;width:100%!important}
+    }
+    @media screen and (min-width:451px) {
+      #logo {width: 50%;}
+      #social_fb_g,#social_fb_k,#social_yt_g,#social_yt_k,#social_bc_g,#social_bc_k {display: none!important}
+      #navbar_g {display: none!important}
+      #navbar_k {display: block!important}
+      .mobile {display:block;width:100%!important}
+    }
+    @media screen and (max-width:680px) {
+      #epcover {width: 100%!important}
+    }
+    @media screen and (min-width:681px) {
+      #epcover {width: 50%!important}
+    }
+    @media screen and (min-width:801px) {
+      #logo {width: 50%;}
+      #social_fb_g,#social_fb_k,#social_yt_g,#social_yt_k,#social_bc_g,#social_bc_k {display: inline-block!important}
+      #navbar_g {display: block!important}
+      #navbar_k {display: none!important}
+      .mobile {display:block;width:100%!important}
+      #epcover {width: 50%!important}
+    }
+    @media screen and (min-width:950px) {
+      .mobile {display:table-cell;width:49.9999%!important}
+      #epcover {width: 50%!important}
+    }
+    @media screen and (max-width:1180px) {
+      #headerkl {display:block!important}
+      #headergr {display:none!important}
+      #headermax {display:none!important}
+    }
+    @media screen and (min-width:1181px) and (max-width:1920px) {
+      #headerkl {display:none!important}
+      #headergr {display:block!important}
+      #headermax {display:none!important}
+    }
+    @media screen and (min-width:1366px) {
+      #geschichte p,.vidtitle,.eptext,.largetext {font-size:20px!important}
+      .xlargetext {font-size:26px!important}
+      .overlay a {font-size:40px!important}
+      .overlay .closebtn {font-size:44px!important}
+      .overlay .overlay-content .referenz {font-size:18px!important}
+      #navbar_g,#navbar_k {font-size:23px!important}
+      .w3-bar a {font-size:23px!important}
+      #logo {margin-top:8px!important}
+      .w3-ul .tabname {font-size:17px!important;letter-spacing:4px!important}
+      .w3-ul .tabinstr,.viddate,.tinytext {font-size:14px!important}
+      .tabcont {padding:8px 16px!important;margin-bottom:16px!important;margin-top:8px!important}
+      .conthead {font-size:40px!important;margin:10px 0!important}
+      .newshead {font-size:34px!important;margin:10px 0!important}
+      .footerheads,.modalheads {font-size:28px!important;margin:10px 0!important}
+      .newsdate,.newstext,.livetext,.footertext,.mediumtext {font-size:17px!important}
+      .relbuttons {font-size:17px!important;padding:8px 16px!important;margin-top:16px!important;margin-bottom:16px!important}
+      .relbuttonsabstand {font-size:17px!important;padding:8px 16px!important;margin-top:16px!important;margin-bottom:16px!important;margin-right:16px!important}
+      .modalclose {font-size:17px!important;padding:8px 16px!important}
+      .relmarginbottom {margin-bottom:16px!important}
+    }
+    @media screen and (min-width:1440px) {
+      #geschichte p,.vidtitle,.eptext,.largetext {font-size:22px!important}
+      .xlargetext {font-size:28px!important}
+      .overlay a {font-size:41px!important}
+      .overlay .closebtn {font-size:45px!important}
+      .overlay .overlay-content .referenz {font-size:19px!important}
+      #navbar_g,#navbar_k {font-size:25px!important}
+      .w3-bar a {font-size:25px!important}
+      #logo {margin-top:8px!important}
+      .w3-ul .tabname {font-size:19px!important;letter-spacing:4px!important}
+      .w3-ul .tabinstr,.viddate,.tinytext {font-size:15px!important}
+      .tabcont {padding:8px 16px!important;margin-bottom:16px!important;margin-top:16px!important}
+      .conthead {font-size:44px!important;margin:20px 0!important}
+      .newshead {font-size:38px!important;margin:20px 0!important}
+      .footerheads,.modalheads {font-size:32px!important;margin:20px 0!important}
+      .newsdate,.newstext,.livetext,.footertext,.mediumtext {font-size:19px!important}
+      .relbuttons {font-size:19px!important;padding:8px 16px!important;margin-top:16px!important;margin-bottom:16px!important}
+      .relbuttonsabstand {font-size:19px!important;padding:8px 16px!important;margin-top:16px!important;margin-bottom:16px!important;margin-right:16px!important}
+      .modalclose{font-size:19px!important;padding:8px 16px!important}
+      .relmarginbottom {margin-bottom:16px!important}
+    }
+    @media screen and (min-width:1536px) {
+      #geschichte p,.vidtitle,.eptext,.largetext {font-size:23px!important}
+      .xlargetext {font-size:29px!important}
+      .overlay a {font-size:42px!important}
+      .overlay .closebtn {font-size:46px!important}
+      .overlay .overlay-content .referenz {font-size:20px!important}
+      #navbar_g,#navbar_k {font-size:26px!important}
+      .w3-bar a {font-size:26px!important;padding:5px 10px!important}
+      #logo {margin-top:16px!important}
+      .w3-ul .tabname {font-size:20px!important;letter-spacing:4px!important}
+      .w3-ul .tabinstr,.viddate,.tinytext {font-size:15px!important}
+      .tabcont {padding:8px 16px!important;margin-bottom:16px!important;margin-top:16px!important}
+      .conthead {font-size:46px!important;margin:20px 0!important}
+      .newshead {font-size:40px!important;margin:20px 0!important}
+      .footerheads,.modalheads {font-size:34px!important;margin:20px 0!important}
+      .newsdate,.newstext,.livetext,.footertext,.mediumtext {font-size:20px!important}
+      .relbuttons {font-size:20px!important;padding:16px 32px!important;margin-top:32px!important;margin-bottom:32px!important}
+      .relbuttonsabstand {font-size:20px!important;padding:16px 32px!important;margin-top:32px!important;margin-bottom:32px!important;margin-right:32px!important}
+      .modalclose{font-size:20px!important;padding:16px 32px!important}
+      .relmarginbottom {margin-bottom:32px!important}
+    }
+    @media screen and (min-width:1680px) {
+      #geschichte p,.vidtitle,.eptext,.largetext {font-size:24px!important}
+      .xlargetext {font-size:30px!important}
+      .overlay a {font-size:47px!important}
+      .overlay .closebtn {font-size:52px!important}
+      .overlay .overlay-content .referenz {font-size:22px!important}
+      #navbar_g,#navbar_k {font-size:27px!important}
+      .w3-bar a {font-size:27px!important;padding:10px 20px!important}
+      #logo {margin-top:16px!important}
+      .w3-ul .tabname {font-size:21px!important;letter-spacing:4px!important}
+      .w3-ul .tabinstr,.viddate,.tinytext {font-size:16px!important}
+      .tabcont {padding:8px 16px!important;margin-bottom:16px!important;margin-top:16px!important}
+      .conthead {font-size:48px!important;margin:20px 0!important}
+      .newshead {font-size:42px!important;margin:20px 0!important}
+      .footerheads,.modalheads {font-size:36px!important;margin:20px 0!important}
+      .newsdate,.newstext,.livetext,.footertext,.mediumtext {font-size:21px!important}
+      .relbuttons {font-size:21px!important;padding:16px 32px!important;margin-top:32px!important;margin-bottom:32px!important}
+      .relbuttonsabstand {font-size:21px!important;padding:16px 32px!important;margin-top:32px!important;margin-bottom:32px!important;margin-right:32px!important}
+      .modalclose{font-size:21px!important;padding:16px 32px!important}
+      .relmarginbottom {margin-bottom:32px!important}
+    }
+    @media screen and (min-width:1815px) {
+      #geschichte p,.vidtitle,.eptext,.largetext {font-size:26px!important}
+      .xlargetext {font-size:32px!important}
+      .overlay a {font-size:56px!important}
+      .overlay .closebtn {font-size:60px!important}
+      .overlay .overlay-content .referenz {font-size:22px!important}
+      #navbar_g,#navbar_k {font-size:29px!important}
+      .w3-bar a {font-size:29px!important;padding:10px 20px!important}
+      #logo {margin-top:32px!important}
+      .w3-ul .tabname {font-size:23px!important;letter-spacing:4px!important}
+      .w3-ul .tabinstr,.viddate,.tinytext {font-size:18px!important}
+      .tabcont {padding:16px 32px!important;margin-bottom:32px!important;margin-top:32px!important}
+      .conthead {font-size:52px!important;margin:40px 0!important}
+      .newshead {font-size:46px!important;margin:40px 0!important}
+      .footerheads,.modalheads {font-size:40px!important;margin:40px 0!important}
+      .newsdate,.newstext,.livetext,.footertext,.mediumtext {font-size:23px!important}
+      .relbuttons {font-size:23px!important;padding:16px 32px!important;margin-top:32px!important;margin-bottom:32px!important}
+      .relbuttonsabstand {font-size:23px!important;padding:16px 32px!important;margin-top:32px!important;margin-bottom:32px!important;margin-right:32px!important}
+      .modalclose{font-size:23px!important;padding:16px 32px!important}
+      .relmarginbottom {margin-bottom:32px!important}
+    }
+    @media screen and (min-width:1920px) {
+      #headerkl {display:none!important}
+      #headergr {display:none!important}
+      #headermax {display:block!important}
+      #geschichte p,.vidtitle,.eptext,.largetext {font-size:28px!important}
+      .xlargetext {font-size:34px!important}
+      .overlay a {font-size:59px!important}
+      .overlay .closebtn {font-size:96px!important}
+      .overlay .overlay-content .referenz {font-size:22px!important}
+      #navbar_g,#navbar_k {font-size:31px!important}
+      .w3-bar a {font-size:31px!important;padding:10px 20px!important}
+      #logo {margin-top:32px!important}
+      .w3-ul .tabname {font-size:25px!important;letter-spacing:8px!important}
+      .w3-ul .tabinstr,.viddate,.tinytext {font-size:20px!important}
+      .tabcont {padding:16px 32px!important;margin-bottom:32px!important;margin-top:32px!important}
+      .conthead {font-size:56px!important;margin:40px 0!important}
+      .newshead {font-size:50px!important;margin:40px 0!important}
+      .footerheads,.modalheads {font-size:44px!important;margin:40px 0!important}
+      .newsdate,.newstext,.livetext,.footertext,.mediumtext {font-size:25px!important}
+      .relbuttons {font-size:25px!important;padding:16px 32px!important;margin-top:32px!important;margin-bottom:32px!important}
+      .relbuttonsabstand {font-size:25px!important;padding:16px 32px!important;margin-top:32px!important;margin-bottom:32px!important;margin-right:32px!important}
+      .modalclose{font-size:25px!important;padding:16px 32px!important}
+      .relmarginbottom {margin-bottom:32px!important}
+    }
+    @media screen and (min-width:2032px) {
+      #geschichte p,.vidtitle,.eptext,.largetext {font-size:30px!important}
+      .xlargetext {font-size:39px!important}
+      .overlay a {font-size:61px!important}
+      .overlay .closebtn {font-size:95px!important}
+      .overlay .overlay-content .referenz {font-size:24px!important}
+      #navbar_g,#navbar_k {font-size:33px!important}
+      .w3-bar a {font-size:33px!important;padding:10px 20px!important}
+      #logo {margin-top:32px!important}
+      .w3-ul .tabname {font-size:24px!important;letter-spacing:8px!important}
+      .w3-ul .tabinstr,.viddate,.tinytext {font-size:18px!important}
+      .tabcont {padding:16px 32px!important;margin-bottom:32px!important;margin-top:32px!important}
+      .conthead {font-size:60px!important;margin:40px 0!important}
+      .newshead {font-size:54px!important;margin:40px 0!important}
+      .footerheads,.modalheads {font-size:48px!important;margin:40px 0!important}
+      .newsdate,.newstext,.livetext,.footertext,.mediumtext {font-size:27px!important}
+      .relbuttons {font-size:27px!important;padding:16px 32px!important;margin-top:32px!important;margin-bottom:32px!important}
+      .relbuttonsabstand {font-size:27px!important;padding:16px 32px!important;margin-top:32px!important;margin-bottom:32px!important;margin-right:32px!important}
+      .modalclose{font-size:27px!important;padding:16px 32px!important}
+      .relmarginbottom {margin-bottom:32px!important}
+    }
+    @media screen and (min-width:2196px) {
+      #geschichte p,.vidtitle,.eptext,.largetext {font-size:32px!important}
+      .xlargetext {font-size:41px!important}
+      .overlay a {font-size:63px!important}
+      .overlay .closebtn {font-size:97px!important}
+      .overlay .overlay-content .referenz {font-size:26px!important}
+      #navbar_g,#navbar_k {font-size:35px!important}
+      .w3-bar a {font-size:35px!important;padding:10px 20px!important}
+      #logo {margin-top:64px!important}
+      .w3-ul .tabname {font-size:26px!important;letter-spacing:8px!important}
+      .w3-ul .tabinstr,.viddate,.tinytext {font-size:20px!important}
+      .tabcont {padding:16px 32px!important;margin-bottom:32px!important;margin-top:64px!important}
+      .conthead {font-size:62px!important;margin:80px 0!important}
+      .newshead {font-size:56px!important;margin:40px 0!important}
+      .footerheads,.modalheads {font-size:50px!important;margin:40px 0!important}
+      .newsdate,.newstext,.livetext,.footertext,.mediumtext {font-size:29px!important}
+      .relbuttons {font-size:29px!important;padding:16px 32px!important;margin-top:32px!important;margin-bottom:32px!important}
+      .relbuttonsabstand {font-size:29px!important;padding:16px 32px!important;margin-top:32px!important;margin-bottom:32px!important;margin-right:32px!important}
+      .modalclose{font-size:29px!important;padding:16px 32px!important}
+      .relmarginbottom {margin-bottom:40px!important}
+    }
+    @media screen and (min-width:2299px) {
+      #geschichte p,.vidtitle,.eptext,.largetext {font-size:34px!important}
+      .xlargetext {font-size:45px!important}
+      .overlay a {font-size:68px!important}
+      .overlay .closebtn {font-size:102px!important}
+      .overlay .overlay-content .referenz {font-size:28px!important}
+      #navbar_g,#navbar_k {font-size:37px!important}
+      .w3-bar a {font-size:37px!important;padding:10px 20px!important}
+      #logo {margin-top:64px!important}
+      .w3-ul .tabname {font-size:28px!important;letter-spacing:8px!important}
+      .w3-ul .tabinstr,.viddate,.tinytext {font-size:23px!important}
+      .tabcont {padding:32px 64px!important;margin-bottom:64px!important;margin-top:64px!important}
+      .conthead {font-size:68px!important;margin:80px 0!important}
+      .newshead {font-size:62px!important;margin:40px 0!important}
+      .footerheads,.modalheads {font-size:56px!important;margin:40px 0!important}
+      .newsdate,.newstext,.livetext,.footertext,.mediumtext {font-size:31px!important}
+      .relbuttons {font-size:31px!important;padding:16px 32px!important;margin-top:32px!important;margin-bottom:32px!important}
+      .relbuttonsabstand {font-size:31px!important;padding:16px 32px!important;margin-top:32px!important;margin-bottom:32px!important;margin-right:32px!important}
+      .modalclose{font-size:31px!important;padding:16px 32px!important}
+      .relmarginbottom {margin-bottom:40px!important}
+    }
+    @media screen and (min-width:2560px) {
+      #geschichte p,.vidtitle,.eptext,.largetext {font-size:38px!important}
+      .xlargetext {font-size:50px!important}
+      .overlay a {font-size:72px!important}
+      .overlay .closebtn {font-size:106px!important}
+      .overlay .overlay-content .referenz {font-size:28px!important}
+      #navbar_g,#navbar_k {font-size:41px!important}
+      .w3-bar a {font-size:41px!important;padding:15px 30px!important}
+      #logo {margin-top:96px!important}
+      .w3-ul .tabname {font-size:32px!important;letter-spacing:16px!important}
+      .w3-ul .tabinstr,.viddate,.tinytext {font-size:25px!important}
+      .tabcont {padding:32px 64px!important;margin-bottom:64px!important;margin-top:96px!important}
+      .conthead {font-size:76px!important;margin:120px 0!important}
+      .newshead {font-size:70px!important;margin:40px 0!important}
+      .footerheads,.modalheads {font-size:64px!important;margin:40px 0!important}
+      .newsdate,.newstext,.livetext,.footertext,.mediumtext {font-size:35px!important}
+      .relbuttons {font-size:35px!important;padding:16px 32px!important;margin-top:32px!important;margin-bottom:32px!important}
+      .relbuttonsabstand {font-size:35px!important;padding:16px 32px!important;margin-top:32px!important;margin-bottom:32px!important;margin-right:32px!important}
+      .modalclose{font-size:35px!important;padding:16px 32px!important}
+      .relmarginbottom {margin-bottom:40px!important}
+    }
+    @media screen and (min-width:2800px) {
+      #geschichte p,.vidtitle,.eptext,.largetext {font-size:42px!important}
+      .xlargetext {font-size:58px!important}
+      .overlay a {font-size:74px!important}
+      .overlay .closebtn {font-size:108px!important}
+      .overlay .overlay-content .referenz {font-size:30px!important}
+      #navbar_g,#navbar_k {font-size:45px!important}
+      .w3-bar a {font-size:45px!important;padding:15px 30px!important}
+      #logo {margin-top:96px!important}
+      .w3-ul .tabname {font-size:36px!important;letter-spacing:16px!important}
+      .w3-ul .tabinstr,.viddate,.tinytext {font-size:28px!important}
+      .tabcont {padding:32px 64px!important;margin-bottom:96px!important;margin-top:96px!important}
+      .conthead {font-size:82px!important;margin:120px 0!important}
+      .newshead {font-size:76px!important;margin:80px 0!important}
+      .footerheads,.modalheads {font-size:62px!important;margin:80px 0!important}
+      .newsdate,.newstext,.livetext,.footertext,.mediumtext {font-size:39px!important}
+      .relbuttons {font-size:39px!important;padding:16px 32px!important;margin-top:32px!important;margin-bottom:32px!important}
+      .relbuttonsabstand {font-size:39px!important;padding:16px 32px!important;margin-top:32px!important;margin-bottom:32px!important;margin-right:32px!important}
+      .modalclose{font-size:39px!important;padding:16px 32px!important}
+      .relmarginbottom {margin-bottom:64px!important}
+    }
+    @media screen and (min-width:3000px) {
+      #geschichte p,.vidtitle,.eptext,.largetext {font-size:44px!important}
+      .xlargetext {font-size:63px!important}
+      .overlay a {font-size:86px!important}
+      .overlay .closebtn {font-size:120px!important}
+      .overlay .overlay-content .referenz {font-size:30px!important}
+      #navbar_g,#navbar_k {font-size:47px!important}
+      .w3-bar a {font-size:47px!important;padding:15px 30px!important}
+      #logo {margin-top:96px!important}
+      .w3-ul .tabname {font-size:36px!important;letter-spacing:16px!important}
+      .w3-ul .tabinstr,.viddate,.tinytext {font-size:28px!important}
+      .tabcont {padding:32px 64px!important;margin-bottom:96px!important;margin-top:96px!important}
+      ul li img {padding:8px 8px!important}
+      .conthead {font-size:88px!important;margin:120px 0!important}
+      .newshead {font-size:82px!important;margin:80px 0!important}
+      .footerheads,.modalheads {font-size:68px!important;margin:80px 0!important}
+      .newsdate,.newstext,.livetext,.footertext,.mediumtext {font-size:41px!important}
+      .relbuttons {font-size:41px!important;padding:16px 32px!important;margin-top:32px!important;margin-bottom:32px!important}
+      .relbuttonsabstand {font-size:41px!important;padding:16px 32px!important;margin-top:32px!important;margin-bottom:32px!important;margin-right:32px!important}
+      .modalclose{font-size:41px!important;padding:16px 32px!important}
+      .relmarginbottom {margin-bottom:64px!important}
+    }
+    @media screen and (min-width:3840px) {
+      #geschichte p,.vidtitle,.eptext,.largetext {font-size:57px!important}
+      .xlargetext {font-size:77px!important}
+      .overlay a {font-size:116px!important}
+      .overlay .closebtn {font-size:130px!important}
+      .overlay .overlay-content .referenz {font-size:42px!important}
+      #navbar_g,#navbar_k {font-size:60px!important}
+      .w3-bar a {font-size:60px!important;padding:20px 40px!important}
+      #logo {margin-top:96px!important}
+      .w3-ul .tabname {font-size:47px!important;letter-spacing:16px!important}
+      .w3-ul .tabinstr,.viddate,.tinytext {font-size:38px!important}
+      .tabcont {padding:32px 64px!important;margin-bottom:128px!important;margin-top:96px!important}
+      ul li img {padding:32px 32px!important}
+      .conthead {font-size:114px!important;margin:120px 0!important}
+      .newshead {font-size:108px!important;margin:80px 0!important}
+      .footerheads,.modalheads {font-size:92px!important;margin:80px 0!important}
+      .newsdate,.newstext,.livetext,.footertext,.mediumtext {font-size:54px!important}
+      .relbuttons {font-size:54px!important;padding:24px 40px!important;margin-top:40px!important;margin-bottom:40px!important}
+      .relbuttonsabstand {font-size:54px!important;padding:24px 40px!important;margin-top:40px!important;margin-bottom:40px!important;margin-right:40px!important}
+      .modalclose{font-size:54px!important;padding:24px 48px!important}
+      .relmarginbottom {margin-bottom:80px!important}
+    }
+    @media screen and (min-width:4000px) {
+      #geschichte p,.vidtitle,.eptext,.largetext {font-size:60px!important}
+      .xlargetext {font-size:80px!important}
+      .overlay a {font-size:128px!important}
+      .overlay .closebtn {font-size:132px!important}
+      .overlay .overlay-content .referenz {font-size:44px!important}
+      #navbar_g,#navbar_k {font-size:63px!important}
+      .w3-bar a {font-size:63px!important;padding:20px 40px!important}
+      #logo {margin-top:96px!important}
+      .w3-ul .tabname {font-size:50px!important;letter-spacing:16px!important}
+      .w3-ul .tabinstr,.viddate,.tinytext {font-size:38px!important}
+      .tabcont {padding:32px 64px!important;margin-bottom:128px!important;margin-top:96px!important}
+      ul li img {padding:32px 32px!important}
+      .conthead {font-size:120px!important;margin:120px 0!important}
+      .newshead {font-size:114px!important;margin:80px 0!important}
+      .footerheads,.modalheads {font-size:98px!important;margin:80px 0!important}
+      .newsdate,.newstext,.livetext,.footertext,.mediumtext {font-size:57px!important}
+      .relbuttons {font-size:57px!important;padding:24px 40px!important;margin-top:40px!important;margin-bottom:40px!important}
+      .relbuttonsabstand {font-size:57px!important;padding:24px 40px!important;margin-top:40px!important;margin-bottom:40px!important;margin-right:40px!important}
+      .modalclose{font-size:57px!important;padding:24px 48px!important}
+      .relmarginbottom {margin-bottom:80px!important}
+    }
+/* Zoom-Effekt für Bilder */
+    .Image-zoom-effect {
+      -webkit-transform:scale(1) rotate(.02deg) translateZ(0);
+      transform:scale(1) rotate(.02deg) translateZ(0);
+      -webkit-transition:-webkit-transform 1s ease-out;
+      transition:-webkit-transform 1s ease-out;
+      transition:transform 1s ease-out;
+      transition:transform 1s ease-out,-webkit-transform 1s ease-out
+    }
+    .Image-zoom-effect:hover {
+      -webkit-transform:scale(1.025) rotate(.02deg) translateZ(0);
+      transform:scale(1.025) rotate(.02deg) translateZ(0);
+      -webkit-transition:-webkit-transform .5s ease-in;
+      transition:-webkit-transform .5s ease-in;
+      transition:transform .5s ease-in;
+      transition:transform .5s ease-in,-webkit-transform .5s ease-in
+    }
+/* Container für eingebettete Videos */
+    .responsvid {
+      position: relative;
+      padding-bottom: 56.25%; /* Default for 1600x900 videos 16:9 ratio*/
+      padding-top: 0px;
+      height: 0;
+      overflow: hidden;
+    }
+    .responsvid iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+

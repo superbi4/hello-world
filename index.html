@@ -1,4 +1,4 @@
-<!-- Letztes Update: 2. Juli 2018 1:44 -->
+<!-- Letztes Update: 5. Juli 2018 13:35 -->
 <!--
 <?php
 //Import PHPMailer classes into the global namespace
@@ -122,9 +122,9 @@ EOT;
 -->
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
   <link rel="stylesheet" type="text/css" href="w3.css">
+  <link rel="stylesheet" type="text/css" href="vi.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="icon" href="/hello-world/images/favicon.ico" type="image/x-icon">
   <title>Vicious Intentions</title>
@@ -132,163 +132,6 @@ EOT;
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="Keywords" content="Band,Metal,Germany,Rostock">
   <meta name="Description" content="Melodic Death Metal Band aus Rostock">
-  <style>
-    html,body {line-height: 1.8;}
-
-/* Overlay für das Hauptmenü */
-    .overlay {
-      height: 100%;
-      width: 0;
-      position: fixed;
-      z-index: 1;
-      top: 0;
-      left: 0;
-      background-color: rgb(0,0,0);
-      background-color: rgba(0,0,0, 0.9);
-      overflow-x: hidden;
-      transition: 0.5s;
-    }
-    .overlay-content {
-      position: relative;
-      top: 15%;
-      width: 100%;
-      text-align: center;
-      margin-top: 30px;
-    }
-    .overlay a {
-      padding: 8px;
-      text-decoration: none;
-      font-size: 36px;
-      color: #818181;
-      display: block;
-      transition: 0.3s;
-    }
-    .overlay a:hover, .overlay a:focus {
-      color: #f1f1f1;
-    }
-    .overlay .closebtn {
-      position: absolute;
-      top: 15px;
-      right: 40px;
-      font-size: 40px;
-    }
-
-/* Greyscale-Effekt für Bilder (funktioniert nicht im IE)*/
-    .greyimg {filter:grayscale(75%)}
-    .greyimg:hover {filter:grayscale(25%)}
-
-/* Text-Link-Design dunkel */
-    .textlink_d a:link, .textlink_d a:visited {
-      text-decoration: none;
-      color: #a7a7a7;
-    }
-    .textlink_d a:hover {color: #f1f1f1;}
-    .textlink_d a:active {
-      text-decoration: none;
-      color: #a7a7a7;
-    }
-/* Text-Link-Design hell */
-    .textlink_h a:link, .textlink_h a:visited {
-      text-decoration: none;
-      color: #818181;
-    }
-    .textlink_h a:hover {color: #b3b3b3;}
-    .textlink_h a:active {
-      text-decoration: none;
-      color: #818181;
-    }
-
-/* Breaking-Points */
-    @media screen and (max-height: 450px) {
-      .overlay a {font-size: 20px}
-      .overlay .closebtn {
-       font-size: 40px;
-       top: 15px;
-       right: 35px;
-      }
-    }
-    @media screen and (max-width:450px) {
-      #logo {width: 70%;}
-      #social_fb_g,#social_fb_k,#social_yt_g,#social_yt_k,#social_bc_g,#social_bc_k {display: none!important}
-      #navbar_g {display: none!important}
-      #navbar_k {display: block!important}
-      .mobile {display:block;width:100%!important}
-    }
-    @media screen and (min-width:451px) {
-      #logo {width: 50%;}
-      #social_fb_g,#social_fb_k,#social_yt_g,#social_yt_k,#social_bc_g,#social_bc_k {display: none!important}
-      #navbar_g {display: none!important}
-      #navbar_k {display: block!important}
-      .mobile {display:block;width:100%!important}
-    }
-    @media screen and (max-width:680px) {
-      #epcover {width: 100%!important}
-    }
-    @media screen and (min-width:681px) {
-      #epcover {width: 50%!important}
-    }
-    @media screen and (min-width:801px) {
-      #logo {width: 50%;}
-      #social_fb_g,#social_fb_k,#social_yt_g,#social_yt_k,#social_bc_g,#social_bc_k {display: inline-block!important}
-      #navbar_g {display: block!important}
-      #navbar_k {display: none!important}
-      .mobile {display:block;width:100%!important}
-      #epcover {width: 50%!important}
-    }
-    @media screen and (min-width:950px) {
-      .mobile {display:table-cell;width:49.9999%!important}
-      #epcover {width: 50%!important}
-    }
-    @media screen and (max-width:1180px) {
-      #headerkl {display:block!important}
-      #headergr {display:none!important}
-      #headermax {display:none!important}
-    }
-    @media screen and (min-width:1181px) and (max-width:1920px) {
-      #headerkl {display:none!important}
-      #headergr {display:block!important}
-      #headermax {display:none!important}
-    }
-    @media screen and (min-width:1921px) {
-      #headerkl {display:none!important}
-      #headergr {display:none!important}
-      #headermax {display:block!important}
-    }
-
-/* Zoom-Effekt für Bilder */
-    .Image-zoom-effect {
-      -webkit-transform:scale(1) rotate(.02deg) translateZ(0);
-      transform:scale(1) rotate(.02deg) translateZ(0);
-      -webkit-transition:-webkit-transform 1s ease-out;
-      transition:-webkit-transform 1s ease-out;
-      transition:transform 1s ease-out;
-      transition:transform 1s ease-out,-webkit-transform 1s ease-out
-    }
-    .Image-zoom-effect:hover {
-      -webkit-transform:scale(1.025) rotate(.02deg) translateZ(0);
-      transform:scale(1.025) rotate(.02deg) translateZ(0);
-      -webkit-transition:-webkit-transform .5s ease-in;
-      transition:-webkit-transform .5s ease-in;
-      transition:transform .5s ease-in;
-      transition:transform .5s ease-in,-webkit-transform .5s ease-in
-    }
-
-/* Container für eingebettete Videos */
-    .responsvid {
-      position: relative;
-      padding-bottom: 56.25%; /* Default for 1600x900 videos 16:9 ratio*/
-      padding-top: 0px;
-      height: 0;
-      overflow: hidden;
-    }
-    .responsvid iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-  </style>
 </head>
 <body>
 <!-- Hero-Image -->
@@ -306,10 +149,10 @@ EOT;
 <!-- Navbar -->
   <div class="w3-top">
     <div id="navbar_g" class="w3-bar w3-large">
-      <a id="social_fb_g" href="https://www.facebook.com/ViciousIntentionsDE/" target="_blank" class="w3-button w3-large w3-text-white w3-left"><i class="fa fa-facebook-square fa-fw fa-lg"></i></a><a id="social_yt_g" href="https://www.youtube.com/channel/UCnhQoXXch3Da9G-2xcbDi4g" target="_blank" class="w3-button w3-large w3-text-white w3-left"><i class="fa fa-youtube fa-fw fa-lg"></i></a><a id="social_bc_g" href="https://viciousintentions.bandcamp.com/releases" target="_blank" class="w3-button w3-large w3-text-white w3-left"><i class="fa fa-bandcamp fa-fw fa-lg"></i></a><a id="menusymbol_g" href="javascript:void(0)" onclick="openNav()" class="w3-button w3-large w3-text-white w3-right"><i class="fa fa-bars fa-lg"></i></a>
+      <a id="social_fb_g" href="https://www.facebook.com/ViciousIntentionsDE/" target="_blank" class="w3-button w3-large w3-text-white w3-left"><i class="fa fa-facebook-square fa-fw fa-lg"></i></a><a id="social_yt_g" href="https://www.youtube.com/channel/UCnhQoXXch3Da9G-2xcbDi4g" target="_blank" class="w3-button w3-large w3-text-white w3-left"><i class="fa fa-youtube fa-fw fa-lg"></i></a><a id="social_bc_g" href="https://viciousintentions.bandcamp.com/releases" target="_blank" class="w3-button w3-large w3-text-white w3-left"><i class="fa fa-bandcamp fa-fw fa-lg"></i></a><a id="menusymbol_g" href="javascript:void(0)" onclick="openNav()" class="w3-button w3-large w3-text-white w3-right"><i class="fa fa-bars fa-fw fa-lg"></i></a>
     </div>
     <div id="navbar_k" class="w3-bar w3-large">
-      <a id="social_fb_k" href="https://www.facebook.com/ViciousIntentionsDE/" target="_blank" class="w3-button w3-large w3-text-white w3-left"><i class="fa fa-facebook-square fa-fw fa-lg"></i></a><a id="social_yt_k" href="https://www.youtube.com/channel/UCnhQoXXch3Da9G-2xcbDi4g" target="_blank" class="w3-button w3-large w3-text-white w3-left"><i class="fa fa-youtube fa-fw fa-lg"></i></a><a id="social_bc_k" href="https://viciousintentions.bandcamp.com/releases" target="_blank" class="w3-button w3-large w3-text-white w3-left"><i class="fa fa-bandcamp fa-fw fa-lg"></i></a><a id="menusymbol_k" href="javascript:void(0)" onclick="openNav()" class="w3-button w3-large w3-text-white w3-right"><i class="fa fa-bars fa-lg"></i></a>
+      <a id="social_fb_k" href="https://www.facebook.com/ViciousIntentionsDE/" target="_blank" class="w3-button w3-large w3-text-white w3-left"><i class="fa fa-facebook-square fa-fw fa-lg"></i></a><a id="social_yt_k" href="https://www.youtube.com/channel/UCnhQoXXch3Da9G-2xcbDi4g" target="_blank" class="w3-button w3-large w3-text-white w3-left"><i class="fa fa-youtube fa-fw fa-lg"></i></a><a id="social_bc_k" href="https://viciousintentions.bandcamp.com/releases" target="_blank" class="w3-button w3-large w3-text-white w3-left"><i class="fa fa-bandcamp fa-fw fa-lg"></i></a><a id="menusymbol_k" href="javascript:void(0)" onclick="openNav()" class="w3-button w3-large w3-text-white w3-right"><i class="fa fa-bars fa-fw fa-lg"></i></a>
     </div>
   </div>
   <div id="myNav" class="overlay">
@@ -319,50 +162,50 @@ EOT;
       <a href="#upcoming" onclick="closeNav()">Upcoming</a>
       <a href="#live" onclick="closeNav()">Live</a>
       <a href="#ep" onclick="closeNav()">EP</a>
-      <a href="#footer" onclick="closeNav(),document.getElementById('datenschutz').style.display='block'" style="font-size: 15px;display:inline-block;margin-top:16px">Datenschutz</a>
-      <a href="#footer" onclick="closeNav(),document.getElementById('impressum').style.display='block'" style="font-size: 15px;display:inline-block;margin-top:16px">Impressum</a>
+      <a class="referenz" href="javascript:void(0)" onclick="closeNav(),document.getElementById('datenschutz').style.display='block'">Datenschutz</a>
+      <a class="referenz" href="javascript:void(0)" onclick="closeNav(),document.getElementById('impressum').style.display='block'">Impressum</a>
     </div>
   </div>
 <!-- Container (BAND) -->
   <div class="w3-container w3-padding-64 w3-center" id="geschichte">
     <img class="w3-animate-opacity" id="logo" src="/hello-world/images/VI_Lang.png">
     <p class="w3-center w3-large"><em>Melo-Death-Metal aus Rostock</em></p>
-    <p class="w3-content w3-large">Seit 2018 sind wir <em>Vicious Intentions</em> &ndash; mit einer Geschichte, die zehn Jahre zurückreicht. SEPHIROTH und N3CRO waren schon damals dabei: Dieses Projekt kennen manche noch als <em>Vicious Intensity</em>. Unsere Songs von heute haben dort ihren Ursprung. Aber wie die Band wandelte sich auch der Sound nach und nach. Musiker kamen und gingen &ndash; bis zum Jahr 2017. Mit HRAFNIR, FELTED und IRA entstand eine feste Formation: Sie ist ein Neuanfang und trägt einen eigenen Namen, der zugleich die Anfänge nicht vergisst. Am 27.&nbsp;März 2018 haben wir erstmals die Bühne betreten. Stay tuned!</p>
+    <p class="w3-large" style="max-width:80%;margin-left:auto;margin-right:auto">Seit 2018 sind wir <em>Vicious Intentions</em> &ndash; mit einer Geschichte, die zehn Jahre zurückreicht. SEPHIROTH und N3CRO waren schon damals dabei: Dieses Projekt kennen manche noch als <em>Vicious Intensity</em>. Unsere Songs von heute haben dort ihren Ursprung. Aber wie die Band wandelte sich auch der Sound nach und nach. Musiker kamen und gingen &ndash; bis zum Jahr 2017. Mit HRAFNIR, FELTED und IRA entstand eine feste Formation: Sie ist ein Neuanfang und trägt einen eigenen Namen, der zugleich die Anfänge nicht vergisst. Am 27.&nbsp;März 2018 haben wir erstmals die Bühne betreten. Stay tuned!</p>
   </div>
   <div class="w3-row">
     <div class="w3-container w3-col l1 m2 s3 w3-center w3-padding"></div>
-    <div class="w3-container w3-col l2 m4 s6 w3-center w3-padding w3-margin-bottom">
+    <div class="w3-container w3-col l2 m4 s6 w3-center w3-padding w3-margin-bottom tabcont">
       <ul class="w3-ul w3-center">
-       <li class="w3-wide">HRAFNIR</li>
-       <li class="w3-text-grey w3-small">(rhythm git)</li>
+       <li class="w3-wide tabname">HRAFNIR</li>
+       <li class="w3-text-grey w3-small tabinstr">(rhythm git)</li>
        <li><img class="w3-circle greyimg" src="/hello-world/images/hrafnir_k_r.jpg" style="width:100%"></li>
       </ul>
     </div>
-    <div class="w3-container w3-col l2 m4 s6 w3-center w3-padding w3-margin-bottom">
+    <div class="w3-container w3-col l2 m4 s6 w3-center w3-padding w3-margin-bottom tabcont">
       <ul class="w3-ul w3-center">
-       <li class="w3-wide">SEPHIROTH</li>
-       <li class="w3-text-grey w3-small">(lead git/voc)</li>
+       <li class="w3-wide tabname">SEPHIROTH</li>
+       <li class="w3-text-grey w3-small tabinstr">(lead git/voc)</li>
        <li><img class="w3-circle greyimg" src="/hello-world/images/sephiroth_k_r.jpg" style="width:100%"></li>
       </ul>
     </div>
-    <div class="w3-container w3-col l2 m4 s6 w3-center w3-padding w3-margin-bottom">
+    <div class="w3-container w3-col l2 m4 s6 w3-center w3-padding w3-margin-bottom tabcont">
       <ul class="w3-ul w3-center">
-       <li class="w3-wide">FELTED</li>
-       <li class="w3-text-grey w3-small">(voc/keys)</li>
+       <li class="w3-wide tabname">FELTED</li>
+       <li class="w3-text-grey w3-small tabinstr">(voc/keys)</li>
        <li><img class="w3-circle greyimg" src="/hello-world/images/felted_k_r.jpg" style="width:100%"></li>
       </ul>
     </div>
-    <div class="w3-container w3-col l2 m4 s6 w3-center w3-padding w3-margin-bottom">
+    <div class="w3-container w3-col l2 m4 s6 w3-center w3-padding w3-margin-bottom tabcont">
       <ul class="w3-ul w3-center">
-       <li class="w3-wide">N3CRO</li>
-       <li class="w3-text-grey w3-small">(bass/voc)</li>
+       <li class="w3-wide tabname">N3CRO</li>
+       <li class="w3-text-grey w3-small tabinstr">(bass/voc)</li>
        <li><img class="w3-circle greyimg" src="/hello-world/images/n3cro_k_r.jpg" style="width:100%"></li>
       </ul>
     </div>
-    <div class="w3-container w3-col l2 m4 s6 w3-center w3-padding w3-margin-bottom">
+    <div class="w3-container w3-col l2 m4 s6 w3-center w3-padding w3-margin-bottom tabcont">
       <ul class="w3-ul w3-center">
-       <li class="w3-wide">IRA</li>
-       <li class="w3-text-grey w3-small">(drums)</li>
+       <li class="w3-wide tabname">IRA</li>
+       <li class="w3-text-grey w3-small tabinstr">(drums)</li>
        <li><img class="w3-circle greyimg" src="/hello-world/images/ira_k_r.jpg" style="width:100%"></li>
       </ul>
     </div>
@@ -373,158 +216,158 @@ EOT;
     <div class="w3-cell-row">
   <!-- Container (UPCOMING) -->
       <div class="w3-cell w3-center w3-grey w3-padding-32 mobile" style="width:49.9999%" id="upcoming">
-        <h1 class="w3-margin-bottom">UPCOMING</h1>
-        <div class="w3-container w3-card w3-center" style="padding:0;width:80%;margin:auto;">
+        <h1 class="w3-margin-bottom conthead">UPCOMING</h1>
+        <div class="w3-container w3-card w3-center relmarginbottom" style="padding:0;width:80%;margin-left:auto;margin-right:auto;margin-bottom:1em">
           <img src="/hello-world/images/2018-10-13_Regional-Finale.jpg" style="width:100%">
 	  <div class="w3-container w3-white">
-	    <h2>Indra Musikclub, Hamburg</h2>
-	    <p class="w3-text-grey">Samstag, 13.10.2018<br>19:00 Uhr</p>
+	    <h2 class="newshead">Indra Musikclub, Hamburg</h2>
+	    <p class="w3-text-grey newsdate">Samstag, 13.10.2018<br>19:00 Uhr</p>
           </div>
 	  <div id="newsinfos01" class="w3-container w3-white w3-hide">
-	    <p class="textlink_h">Im Oktober sind wir beim Regional-Finale des <a href="https://www.sph-bandcontest.de/info" target="_blank">SPH-Bandcontests</a> in Hamburg dabei. Ort des Spektakels wird einer der traditionsreichen Clubs in der Großen Freiheit sein: der <a href="http://indraclub64.de" target="_blank">Indra Club 64</a>. Euch erwartet handgemacht Musik &ndash; von Pop, Metal bis Indy-Rock. Noch stehen nicht alle Teilnehmer fest, aber sicher ist: Es wird ein bunter Abend.</p>
-	    <p class="textlink_h">Da der Weg nach Hamburg weit ist, hier die gute Nachricht: Wir sind dabei, einen Bus zu organisieren. Der bringt euch von Rostock zum Konzert und anschließend wieder zurück. Mehr Infos dazu findet ihr unter "Tickets".</p>
-            <p>Wir sehen uns in Hamburg!</p>
+	    <p class="textlink_h newstext">Im Oktober sind wir beim Regional-Finale des <a href="https://www.sph-bandcontest.de/info" target="_blank">SPH-Bandcontests</a> in Hamburg dabei. Ort des Spektakels wird einer der traditionsreichen Clubs in der Großen Freiheit sein: der <a href="http://indraclub64.de" target="_blank">Indra Club 64</a>. Euch erwartet handgemacht Musik &ndash; von Pop, Metal bis Indy-Rock. Noch stehen nicht alle Teilnehmer fest, aber sicher ist: Es wird ein bunter Abend.</p>
+	    <p class="textlink_h newstext">Da der Weg nach Hamburg weit ist, hier die gute Nachricht: Wir sind dabei, einen Bus zu organisieren. Der bringt euch von Rostock zum Konzert und anschließend wieder zurück. Mehr Infos dazu findet ihr unter "Tickets".</p>
+            <p class="newstext">Wir sehen uns in Hamburg!</p>
           </div>
 	  <div class="w3-container w3-white">
-            <button id="morebtn" class="w3-button w3-border w3-dark-grey w3-margin-top w3-margin-bottom w3-margin-right" onclick="anzeigetoggleundchangebtn('newsinfos01','morebtn')"><i class="fa fa-caret-down"></i>  Infos</button>
-	    <button class="w3-button w3-border w3-dark-grey w3-margin-top w3-margin-bottom" onclick="document.getElementById('tickets').style.display='block'">Tickets</button>
+            <button id="morebtn" class="w3-button w3-border w3-dark-grey w3-margin-top w3-margin-bottom w3-margin-right relbuttonsabstand" onclick="anzeigetoggleundchangebtn('newsinfos01','morebtn')"><i class="fa fa-caret-down"></i>  Infos</button>
+	    <button class="w3-button w3-border w3-dark-grey w3-margin-top w3-margin-bottom relbuttons" onclick="document.getElementById('tickets').style.display='block'">Tickets</button>
           </div>
         </div>
       </div>
   <!-- Container (LIVE) -->
       <div class="w3-cell w3-center w3-black w3-padding-32 mobile" style="width:49.9999%" id="live">
-        <h1 class="w3-margin-bottom">LIVE</h1>
-        <div class="w3-container w3-card w3-center w3-margin-bottom" style="padding:0;width:80%;margin:auto;">
+        <h1 class="w3-margin-bottom conthead">LIVE</h1>
+        <div class="w3-container w3-card w3-center w3-margin-bottom" style="padding:0;width:80%;margin-left:auto;margin-right:auto;margin-bottom:1em">
           <div class="responsvid"><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/V07aLCc9gr4?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
-	  <div class="w3-container w3-black"><p class="w3-text-orange w3-large" style="text-align:left;margin:0;padding:0">Siren Singer</p><p class="w3-text-white w3-tiny" style="text-align:left;margin:0;padding:0;padding-bottom:5px">Alte Zuckerfabrik Rostock, 27. März 2018.</p></div>
+	  <div class="w3-container w3-black"><p class="w3-text-orange w3-large vidtitle" style="text-align:left;margin:0;padding:0">Siren Singer</p><p class="w3-text-white w3-tiny viddate" style="text-align:left;margin:0;padding:0;padding-bottom:2em">Alte Zuckerfabrik Rostock, 27. März 2018.</p></div>
         </div>
-        <div class="w3-container w3-card w3-center w3-margin-top" style="padding:0;width:80%;margin:auto;">
+        <div class="w3-container w3-card w3-center w3-margin-top" style="padding:0;width:80%;margin-left:auto;margin-right:auto">
           <div class="responsvid"><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/LpnD2aPqhAU?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
-	  <div class="w3-container w3-black"><p class="w3-text-orange w3-large" style="text-align:right;margin:0;padding:0">Lovesick in Hatred</p><p class="w3-text-white w3-tiny" style="text-align:right;margin:0;padding:0;padding-bottom:5px">Alte Zuckerfabrik Rostock, 27. März 2018.</p></div>
-          <p class="textlink_d" style="margin-top:50px;margin-bottom:50px;">Feuertaufe: Am 27. März standen wir erstmals auf der Bühne &ndash; zusammen mit <a href="https://www.facebook.com/modicumofhope/" target="_blank">Modicum of Hope</a>, <a href="https://www.facebook.com/RadagostBand" target="_blank">Radagost</a> und <a href="https://www.facebook.com/negraschus" target="_blank">Maik Negraschus</a>. Danke für den geilen Abend!</p><p style="margin-bottom:20px;"><button id="morevids_btn" class="w3-button w3-border w3-padding-small" onclick="anzeigeundhidebtn('morevids','morevids_btn')">Mehr Videos</button></p> <!-- (Button im IE nicht richtig angezeigt) -->
+	  <div class="w3-container w3-black"><p class="w3-text-orange w3-large vidtitle" style="text-align:right;margin:0;padding:0">Lovesick in Hatred</p><p class="w3-text-white w3-tiny viddate" style="text-align:right;margin:0;padding:0;padding-bottom:2em">Alte Zuckerfabrik Rostock, 27. März 2018.</p></div>
+          <p class="textlink_d livetext" style="margin-top:3em;margin-bottom:3em;">Feuertaufe: Am 27. März standen wir erstmals auf der Bühne &ndash; zusammen mit <a href="https://www.facebook.com/modicumofhope/" target="_blank">Modicum of Hope</a>, <a href="https://www.facebook.com/RadagostBand" target="_blank">Radagost</a> und <a href="https://www.facebook.com/negraschus" target="_blank">Maik Negraschus</a>. Danke für den geilen Abend!</p><p style="margin-bottom:1.5em"><button id="morevids_btn" class="w3-button w3-border w3-padding-small relbuttons" onclick="anzeigeundhidebtn('morevids','morevids_btn')">Mehr Videos</button></p> <!-- (Button im IE nicht richtig angezeigt) -->
         </div>
-        <div class="w3-container w3-card w3-center w3-margin-bottom morevids w3-animate-opacity w3-hide" style="padding:0;width:80%;margin:auto;">
+        <div class="w3-container w3-card w3-center w3-margin-bottom morevids w3-animate-opacity w3-hide" style="padding:0;width:80%;margin-left:auto;margin-right:auto">
           <div class="responsvid"><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Um56wapTaak?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
-	  <div class="w3-container w3-black"><p class="w3-text-orange w3-large" style="text-align:left;margin:0;padding:0">Point of No Return</p><p class="w3-text-white w3-tiny" style="text-align:left;margin:0;padding:0;padding-bottom:5px">Alte Zuckerfabrik Rostock, 27. März 2018.</p></div>
+	  <div class="w3-container w3-black"><p class="w3-text-orange w3-large vidtitle" style="text-align:left;margin:0;padding:0">Point of No Return</p><p class="w3-text-white w3-tiny viddate" style="text-align:left;margin:0;padding:0;padding-bottom:2em">Alte Zuckerfabrik Rostock, 27. März 2018.</p></div>
         </div>
-        <div class="w3-container w3-card w3-center w3-margin-top morevids w3-animate-opacity w3-hide" style="padding:0;width:80%;margin:auto;">
+        <div class="w3-container w3-card w3-center w3-margin-top morevids w3-animate-opacity relmarginbottom w3-hide" style="padding:0;width:80%;margin-left:auto;margin-right:auto">
           <div class="responsvid"><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/3z-GNGt_snU?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
-	  <div class="w3-container w3-black"><p class="w3-text-orange w3-large" style="text-align:right;margin:0;padding:0">Blood of Innocence</p><p class="w3-text-white w3-tiny" style="text-align:right;margin:0;padding:0;padding-bottom:5px">Alte Zuckerfabrik Rostock, 27. März 2018.</p></div>
+	  <div class="w3-container w3-black"><p class="w3-text-orange w3-large vidtitle" style="text-align:right;margin:0;padding:0">Blood of Innocence</p><p class="w3-text-white w3-tiny viddate" style="text-align:right;margin:0;padding:0;padding-bottom:2em">Alte Zuckerfabrik Rostock, 27. März 2018.</p></div>
         </div>
       </div>
     </div>
   </div>
 <!--Container (EP)-->
-  <div class="w3-container w3-content textlink_h" style="margin-bottom:64px;margin-top:-16px" id="ep">
-    <h1 class="w3-center">EP: <em>CONCEALED STRIKE</em></h1>
-    <p class="w3-xlarge w3-text-red w3-center">work in progress <i class="fa fa-gavel"></i></p>
-    <p class="w3-large w3-wide"><img id="epcover" class="Image-zoom-effect" src="/hello-world/images/coverk.jpg" style="width:33%;float:left;margin-right:20px;margin-bottom:20px;">1. Point Of No Return<br>2. About Our Fate<br>3. Blood Of Innocence<br>4. Siren Singer<br></p><p class="w3-large">Derzeit laufen die Arbeiten an der EP <em>Concealed Strike</em> &ndash; unserer ersten handfesten Veröffentlichung. Drei rasante Songs aus dem LIVE-Repertoire werden darauf zu hören sein, zusammen mit dem ruhigeren Stück <em>About Our Fate</em>. Allesamt stammen sie noch aus der <a href="#geschichte">Vorzeit der Band</a>: Seitdem hat sich ihr Gesicht jedoch deutlich verändert. Neu arrangiert und eingespielt bekommen sie hier einen neuen Sound.</p>
+  <div class="w3-container textlink_h" style="width:80%;margin-left:auto;margin-right:auto;margin-bottom:4em;margin-top:-1em" id="ep">
+    <h1 class="w3-center conthead">EP: <em>CONCEALED STRIKE</em></h1>
+    <p class="w3-xlarge w3-text-red w3-center xlargetext" style="margin-bottom:2em">work in progress <i class="fa fa-gavel"></i></p>
+    <p class="w3-large w3-wide eptext"><img id="epcover" class="Image-zoom-effect" src="/hello-world/images/coverk.jpg" style="float:left;margin-right:1em;margin-bottom:1em;">1. Point Of No Return<br>2. About Our Fate<br>3. Blood Of Innocence<br>4. Siren Singer<br></p><p class="w3-large eptext">Derzeit laufen die Arbeiten an der EP <em>Concealed Strike</em> &ndash; unserer ersten handfesten Veröffentlichung. Drei rasante Songs aus dem LIVE-Repertoire werden darauf zu hören sein, zusammen mit dem ruhigeren Stück <em>About Our Fate</em>. Allesamt stammen sie noch aus der <a href="#geschichte">Vorzeit der Band</a>: Seitdem hat sich ihr Gesicht jedoch deutlich verändert. Neu arrangiert und eingespielt bekommen sie hier einen neuen Sound.</p>
   </div>
 <!-- Footer -->
   <div id="footer" class="w3-container w3-margin-top w3-padding-32 w3-dark-grey">
     <div class="w3-row">
       <div class="w3-third w3-padding">
-        <h3 class="w3-center">Kontakt</h3>
-	<form method="post" style="width:80%;margin:auto">
-	  <input class="w3-input w3-dark-grey" type="text" name="name_contact" id="name_contact" placeholder="Name" required></input>
-	  <input class="w3-input w3-dark-grey" type="email" name="email_contact" id="email_contact" placeholder="E-Mail" required></input>
-	  <textarea style="width:100%;height:45px;resize:vertical;" class="w3-input w3-dark-grey" wrap="hard" name="nachricht_contact" id="nachricht_contact" placeholder="Nachricht" required></textarea>
+        <h3 class="w3-center footerheads">Kontakt</h3>
+	<form method="post" style="width:80%;margin-left:auto;margin-right:auto">
+	  <input class="w3-input w3-dark-grey footertext" type="text" name="name_contact" id="name_contact" placeholder="Name" required></input>
+	  <input class="w3-input w3-dark-grey footertext" type="email" name="email_contact" id="email_contact" placeholder="E-Mail" required></input>
+	  <textarea style="width:100%;height:3em;resize:vertical;" class="w3-input w3-dark-grey footertext" wrap="hard" name="nachricht_contact" id="nachricht_contact" placeholder="Nachricht" required></textarea>
 	<div class="w3-bar">
-	    <input class="w3-button w3-bar-item w3-border w3-dark-grey w3-margin-top w3-margin-bottom" type="submit" name="submit_contact" value="Absenden" disabled></input>
+	    <input class="w3-button w3-bar-item w3-border w3-dark-grey w3-margin-top w3-margin-bottom relbuttons" type="submit" name="submit_contact" value="Absenden" disabled></input>
 	</div>
 	</form>
       </div>
       <div class="w3-third w3-padding w3-center">
-        <h3>Social</h3>
+        <h3 class="footerheads">Social</h3>
 	<div class="w3-container textlink_d">
-	  <p style="margin-top:8px;">Besuch&nbsp;uns&nbsp;auf<br><a href="https://www.facebook.com/ViciousIntentionsDE/" target="_blank"><i class="fa fa-facebook-square"></i>&nbsp;Facebook</a><br>Seh&nbsp;uns&nbsp;auf<br><a href="https://www.youtube.com/channel/UCnhQoXXch3Da9G-2xcbDi4g" target="_blank"><i class="fa fa-youtube"></i>&nbsp;YouTube</a><br>Hör&nbsp;uns&nbsp;auf<br><a href="https://viciousintentions.bandcamp.com/releases" target="_blank"><i class="fa fa-bandcamp"></i>&nbsp;Bandcamp</a></p>
+	  <p class="footertext" style="margin-top:0.5em;">Besuch&nbsp;uns&nbsp;auf<br><a href="https://www.facebook.com/ViciousIntentionsDE/" target="_blank"><i class="fa fa-facebook-square"></i>&nbsp;Facebook</a><br>Seh&nbsp;uns&nbsp;auf<br><a href="https://www.youtube.com/channel/UCnhQoXXch3Da9G-2xcbDi4g" target="_blank"><i class="fa fa-youtube"></i>&nbsp;YouTube</a><br>Hör&nbsp;uns&nbsp;auf<br><a href="https://viciousintentions.bandcamp.com/releases" target="_blank"><i class="fa fa-bandcamp"></i>&nbsp;Bandcamp</a></p>
 	</div>
       </div>
       <div class="w3-third w3-padding w3-center">
-        <h3>Referenz</h3>
+        <h3 class="footerheads">Referenz</h3>
 	<div class="w3-container textlink_d">
-	  <p style="margin-top:8px;"><a href="#footer" onclick="document.getElementById('datenschutz').style.display='block'">Datenschutz</a><br><a href="#footer" onclick="document.getElementById('impressum').style.display='block'">Impressum</a></p>
+	  <p class="footertext" style="margin-top:0.5em;"><a href="javascript:void(0)" onclick="document.getElementById('datenschutz').style.display='block'">Datenschutz</a><br><a href="javascript:void(0)" onclick="document.getElementById('impressum').style.display='block'">Impressum</a></p>
         </div>
       </div>
     </div>
   </div>
   <div class="w3-container w3-center" style="color:#fff;background-color:#444444;">
-    <a href="#" class="w3-button w3-large w3-circle" style="margin-top:16px;"><i class="fa fa-angle-up fa-lg"></i></a>
-    <p style="color:#a7a7a7">&copy;&nbsp;Vicious&nbsp;Intentions&nbsp;2018&nbsp;- All&nbsp;rights&nbsp;reserved</p>
+    <a href="#" class="w3-button w3-large w3-circle relbuttons" style="margin-top:1em"><i class="fa fa-angle-up fa-lg"></i></a>
+    <p class="footertext" style="color:#a7a7a7">&copy;&nbsp;Vicious&nbsp;Intentions&nbsp;2018&nbsp;- All&nbsp;rights&nbsp;reserved</p>
   </div>
 <!-- Modal (Datenschutz) -->
   <div id="datenschutz" class="w3-modal w3-animate-opacity" style="background-color:rgba(0,0,0,0.8)">
-    <div class="w3-modal-content w3-dark-grey">
-      <div class="w3-container w3-padding-32" style="width:80%;margin:auto;">
-        <span onclick="document.getElementById('datenschutz').style.display='none'" class="w3-button w3-display-topright w3-large">&times;</span>
-        <h1 class="w3-center">Datenschutz</h1>
-	<h3 style="margin-top:80px;">Geltungsbereich</h3> 
-        <p class="textlink_d">Diese Datenschutzerklärung soll die Nutzer dieser Website gemäß der europäischen Datenschutzverordnung, des Bundesdatenschutzgesetzes und Telemediengesetzes über die Art, den Umfang und den Zweck der Erhebung und Verwendung personenbezogener Daten durch den Websitebetreiber Vicious Intentions informieren.<br>
+    <div class="w3-modal-content w3-dark-grey" style="width:80%;margin-right:auto;margin-left:auto">
+      <div class="w3-container w3-padding-32" style="width:80%;margin-right:auto;margin-left:auto">
+        <span onclick="document.getElementById('datenschutz').style.display='none'" class="w3-button w3-display-topright w3-large modalclose">&times;</span>
+        <h1 class="w3-center conthead">Datenschutz</h1>
+	<h3 class="modalheads" style="margin-top:3em;">Geltungsbereich</h3> 
+        <p class="textlink_d mediumtext">Diese Datenschutzerklärung soll die Nutzer dieser Website gemäß der europäischen Datenschutzverordnung, des Bundesdatenschutzgesetzes und Telemediengesetzes über die Art, den Umfang und den Zweck der Erhebung und Verwendung personenbezogener Daten durch den Websitebetreiber Vicious Intentions informieren.<br>
 Der Websitebetreiber misst dem Datenschutz große Bedeutung zu und behandelt Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Vorschriften.<br>
 Bitte bedenken Sie, dass die Datenübertragung im Internet grundsätzlich mit Sicherheitslücken behaftet ist. Ein vollumfänglicher Schutz vor dem Zugriff durch Fremde ist nicht realisierbar.<br><br></p>
-	<h3>Zugriffsdaten</h3>
-	<p class="textlink_d">Der Websitebetreiber bzw. Seitenprovider erhebt Daten über Zugriffe auf die Seite und speichert diese als „Server-Logfiles" ab. Folgende Daten werden so protokolliert:<br></p><ul><li>Besuchte Webseite</li><li>Uhrzeit zum Zeitpunkt des Zugriffes</li><li>Menge der gesendeten Daten in Byte</li><li>Quelle/Verweis, von welchem Sie auf die Seite gelangten</li><li>Verwendeter Browser</li><li>Verwendetes Betriebssystem</li><li>Verwendete IP-Adresse, in anonymisierter Form</li></ul><p class="textlink_d">Die erhobenen Daten dienen lediglich statistischen Auswertungen und der Verbesserung der Website. Der Websitebetreiber behält sich allerdings vor, die Server-Logfiles nachträglich zu überprüfen, sollten konkrete Anhaltspunkte auf eine rechtswidrige Nutzung hinweisen.<br><br></p>
-	<h3>Umgang mit personenbezogenen Daten</h3>
-	<p class="textlink_d">Der Websitebetreiber erhebt, nutzt und gibt Ihre personenbezogenen Daten nur dann weiter, wenn dies im gesetzlichen Rahmen erlaubt ist oder Sie in die Datenerhebung einwilligen.<br> Als personenbezogene Daten gelten sämtliche Informationen, welche dazu dienen, Ihre Person zu bestimmen und welche zu Ihnen zurückverfolgt werden können – also beispielsweise Ihr Name, Ihre E-Mail-Adresse, Telefonnummer und IP-Adresse.<br><br></p>
-	<h3>Umgang mit Kontaktdaten</h3>
-	<p class="textlink_d">Nehmen Sie mit dem Websitebetreiber durch die angebotenen Kontaktmöglichkeiten Verbindung auf, werden Ihre Angaben gespeichert, damit auf diese zur Bearbeitung und Beantwortung Ihrer Anfrage zurückgegriffen werden kann. Ohne Ihre Einwilligung werden diese Daten nicht an Dritte weitergegeben. Nachdem der Zweck für die Aufbewahrung und Verwendung der Daten entfällt, werden diese gelöscht, sofern dies nicht einer gesetzlichen Pflicht zu Aufbewahrung widerspricht.<br><br></p>
-	<h3>Nutzung von Youtube-Videos mit Framing-Technik</h3>
-	<p class="textlink_d">Diese Website nutzt Plugins der Firma YouTube (YouTube LLC, 901 Cherry Ave., San Bruno, CA 94066, USA. Im Besitz und verteten durch: Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA.), um Youtube-Videos mit Framing-Technik direkt auf den Webseiten von Vicious Intentions anzeigen und abspielen lassen zu können. Die Nutzung des Dienstes geschieht zum Zweck der besseren Darstellung von Informationen auf der Website.<br>
+	<h3 class="modalheads">Zugriffsdaten</h3>
+	<p class="textlink_d mediumtext">Der Websitebetreiber bzw. Seitenprovider erhebt Daten über Zugriffe auf die Seite und speichert diese als „Server-Logfiles" ab. Folgende Daten werden so protokolliert:<br></p><ul class="mediumtext"><li>Besuchte Webseite</li><li>Uhrzeit zum Zeitpunkt des Zugriffes</li><li>Menge der gesendeten Daten in Byte</li><li>Quelle/Verweis, von welchem Sie auf die Seite gelangten</li><li>Verwendeter Browser</li><li>Verwendetes Betriebssystem</li><li>Verwendete IP-Adresse, in anonymisierter Form</li></ul><p class="textlink_d mediumtext">Die erhobenen Daten dienen lediglich statistischen Auswertungen und der Verbesserung der Website. Der Websitebetreiber behält sich allerdings vor, die Server-Logfiles nachträglich zu überprüfen, sollten konkrete Anhaltspunkte auf eine rechtswidrige Nutzung hinweisen.<br><br></p>
+	<h3 class="modalheads">Umgang mit personenbezogenen Daten</h3>
+	<p class="textlink_d mediumtext">Der Websitebetreiber erhebt, nutzt und gibt Ihre personenbezogenen Daten nur dann weiter, wenn dies im gesetzlichen Rahmen erlaubt ist oder Sie in die Datenerhebung einwilligen.<br> Als personenbezogene Daten gelten sämtliche Informationen, welche dazu dienen, Ihre Person zu bestimmen und welche zu Ihnen zurückverfolgt werden können – also beispielsweise Ihr Name, Ihre E-Mail-Adresse, Telefonnummer und IP-Adresse.<br><br></p>
+	<h3 class="modalheads">Umgang mit Kontaktdaten</h3>
+	<p class="textlink_d mediumtext">Nehmen Sie mit dem Websitebetreiber durch die angebotenen Kontaktmöglichkeiten Verbindung auf, werden Ihre Angaben gespeichert, damit auf diese zur Bearbeitung und Beantwortung Ihrer Anfrage zurückgegriffen werden kann. Ohne Ihre Einwilligung werden diese Daten nicht an Dritte weitergegeben. Nachdem der Zweck für die Aufbewahrung und Verwendung der Daten entfällt, werden diese gelöscht, sofern dies nicht einer gesetzlichen Pflicht zu Aufbewahrung widerspricht.<br><br></p>
+	<h3 class="modalheads">Nutzung von Youtube-Videos mit Framing-Technik</h3>
+	<p class="textlink_d mediumtext">Diese Website nutzt Plugins der Firma YouTube (YouTube LLC, 901 Cherry Ave., San Bruno, CA 94066, USA. Im Besitz und verteten durch: Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA.), um Youtube-Videos mit Framing-Technik direkt auf den Webseiten von Vicious Intentions anzeigen und abspielen lassen zu können. Die Nutzung des Dienstes geschieht zum Zweck der besseren Darstellung von Informationen auf der Website.<br>
 Die Youtube-Videos sind im erweiterten Datenschutzmodus eingebunden. Das bedeutet, dass beim Laden unserer Seiten, auf denen YouTube-Videos eingebunden sind, keine Cookies von YouTube im Browser des Nutzers gespeichert werden. Dennoch wird, auch wenn die Videos nicht abgespielt werden, eine Verbindung zu den Servern von YouTube und dem DoubleClick-Netzwerk von Google hergestellt. Dabei wird den Servern mitgeteilt, welche unserer Seiten Sie besucht haben. Sobald das Video abgespielt wird, werden weitere Datenverarbeitungsvorgänge ausgelöst. Der Websitebetreiber hat keinen Einfluss auf die Natur und den Umfang der Daten, welche das Plugin an die Server von YouTube und DoubleClick übermittelt.<br>
 Weitere Informationen zum Umgang mit Nutzerdaten durch Google finden Sie in der entsprechenden <a href="https://policies.google.com/privacy?hl=de&gl=de" target="_blank">Datenschutzerklärung des Unternehmens</a>.<br><br></p>
-	<h3>Rechte des Nutzers: Auskunft, Berichtigung und Löschung</h3>
-	<p class="textlink_d">Sie als Nutzer erhalten auf Antrag Ihrerseits kostenlose Auskunft darüber, welche personenbezogenen Daten über Sie gespeichert wurden. Sofern Ihr Wunsch nicht mit einer gesetzlichen Pflicht zur Aufbewahrung von Daten (z.&nbsp;B. Vorratsdatenspeicherung) kollidiert, haben Sie ein Anrecht auf Berichtigung falscher Daten und auf die Sperrung oder Löschung Ihrer personenbezogenen Daten.<br><br></p>	
-        <p class="w3-large" style="margin-bottom:80px;"></p>
-	<span onclick="document.getElementById('datenschutz').style.display='none'" class="w3-button w3-display-bottommiddle w3-large">&times;</span>
+	<h3 class="modalheads">Rechte des Nutzers: Auskunft, Berichtigung und Löschung</h3>
+	<p class="textlink_d mediumtext">Sie als Nutzer erhalten auf Antrag Ihrerseits kostenlose Auskunft darüber, welche personenbezogenen Daten über Sie gespeichert wurden. Sofern Ihr Wunsch nicht mit einer gesetzlichen Pflicht zur Aufbewahrung von Daten (z.&nbsp;B. Vorratsdatenspeicherung) kollidiert, haben Sie ein Anrecht auf Berichtigung falscher Daten und auf die Sperrung oder Löschung Ihrer personenbezogenen Daten.<br><br></p>	
+        <p class="w3-large" style="margin-bottom:3em;"></p>
+	<span onclick="document.getElementById('datenschutz').style.display='none'" class="w3-button w3-display-bottommiddle w3-large modalclose">&times;</span>
       </div>
     </div>
   </div>
 <!-- Modal (Impressum) -->
   <div id="impressum" class="w3-modal w3-animate-opacity" style="background-color:rgba(0,0,0,0.8)">
-    <div class="w3-modal-content w3-dark-grey">
-      <div class="w3-container w3-padding-32" style="width:80%;margin:auto;">
-        <span onclick="document.getElementById('impressum').style.display='none'" class="w3-button w3-display-topright w3-large">&times;</span>
-        <h1 class="w3-center">Impressum</h1>
-	<h3 style="margin-top:80px;">Verantwortlich&nbsp;für den&nbsp;Inhalt</h3> 
-        <p class="textlink_d">Vicious Intentions GbR<br>Straße 12<br>12345 Stadt</p>
-        <p class="textlink_d">12345 6789012<br>viciousintentions[at]gmail.com<br><br></p>
-	<h3>Haftungsauschluss</h3>
-	<p class="textlink_d"><b>Haftung für Inhalte: </b>Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.<br><br><b>Haftung für Links: </b>Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.<br><br><b>Urheberrecht: </b>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.<br><br><b>Datenschutz: </b>Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder eMail-Adressen) erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben. Näheres dazu findet ihr in <a href="#footer" onclick="document.getElementById('impressum').style.display='none',document.getElementById('datenschutz').style.display='block'">unserer Datenschutzerklärung</a>.<br><br>Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten durch Dritte zur Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird hiermit ausdrücklich widersprochen. Die Betreiber der Seiten behalten sich ausdrücklich rechtliche Schritte im Falle der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-Mails, vor.<br><br></p>
-        <p class="w3-large" style="margin-bottom:80px;"></p>
-	<span onclick="document.getElementById('impressum').style.display='none'" class="w3-button w3-display-bottommiddle w3-large">&times;</span>
+    <div class="w3-modal-content w3-dark-grey" style="width:80%;margin-right:auto;margin-left:auto">
+      <div class="w3-container w3-padding-32" style="width:80%;margin-right:auto;margin-left:auto">
+        <span onclick="document.getElementById('impressum').style.display='none'" class="w3-button w3-display-topright w3-large modalclose">&times;</span>
+        <h1 class="w3-center conthead">Impressum</h1>
+	<h3 class="modalheads" style="margin-top:3em">Verantwortlich&nbsp;für den&nbsp;Inhalt</h3> 
+        <p class="textlink_d mediumtext">Vicious Intentions GbR<br>Straße 12<br>12345 Stadt</p>
+        <p class="textlink_d mediumtext">12345 6789012<br>viciousintentions[at]gmail.com<br><br></p>
+	<h3 class="modalheads">Haftungsauschluss</h3>
+	<p class="textlink_d mediumtext"><b>Haftung für Inhalte: </b>Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.<br><br><b>Haftung für Links: </b>Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.<br><br><b>Urheberrecht: </b>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.<br><br><b>Datenschutz: </b>Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder eMail-Adressen) erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben. Näheres dazu findet ihr in <a href="#footer" onclick="document.getElementById('impressum').style.display='none',document.getElementById('datenschutz').style.display='block'">unserer Datenschutzerklärung</a>.<br><br>Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten durch Dritte zur Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird hiermit ausdrücklich widersprochen. Die Betreiber der Seiten behalten sich ausdrücklich rechtliche Schritte im Falle der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-Mails, vor.<br><br></p>
+        <p class="w3-large modalheads" style="margin-bottom:3em"></p>
+	<span onclick="document.getElementById('impressum').style.display='none'" class="w3-button w3-display-bottommiddle w3-large modalclose">&times;</span>
       </div>
     </div>
   </div>
 <!-- Modal (Tickets SPH Hamburg) -->
   <div id="tickets" class="w3-modal w3-animate-opacity" style="background-color:rgba(0,0,0,0.8)">
-    <div class="w3-modal-content">
-      <div class="w3-container w3-padding-32" style="width:80%;margin:auto;">
-        <span onclick="document.getElementById('tickets').style.display='none'" class="w3-button w3-display-topright w3-large">&times;</span>
-        <h1 class="w3-center">Tickets</h1>
-	<p class="w3-center w3-text-grey">Indra Musikclub,&nbsp;Hamburg. Samstag,&nbsp;13.10.2018. 19:00&nbsp;Uhr.</p>
-        <p class="w3-large" style="margin-top:80px;">Wir bieten euch die Möglichkeit, per Reisebus nach Hamburg und anschließend wieder zurück nach Rostock zu fahren. Das spart die Übernachtung und ist für alle eine entspannte Art, zum Konzert zu kommen.</p>
-	<p class="w3-large">Sobald uns 15&nbsp;Anmeldungen erreicht haben, wird der Bus bestellt: Euch kostet die Busfahrt (inklusive des Konzert-Tickets) <span class="w3-text-red">maximal 50&nbsp;€.</span> Wenn mehr als die nötigen 15&nbsp;Anmeldungen eingehen, wird es natürlich noch günstiger.</p>
-	<p class="w3-large" style="margin-bottom:40px;">Seid ihr dabei? Dann füllt einfach das Anmeldeformular aus. Wir halten euch dann auf dem Laufenden.</p>
+    <div class="w3-modal-content" style="width:80%;margin-right:auto;margin-left:auto">
+      <div class="w3-container w3-padding-32" style="width:80%;margin-left:auto;margin-right:auto">
+        <span onclick="document.getElementById('tickets').style.display='none'" class="w3-button w3-display-topright w3-large modalclose">&times;</span>
+        <h1 class="w3-center conthead">Tickets</h1>
+	<p class="w3-center w3-text-grey mediumtext">Indra Musikclub,&nbsp;Hamburg. Samstag,&nbsp;13.10.2018. 19:00&nbsp;Uhr.</p>
+        <p class="w3-large largetext" style="margin-top:3em">Wir bieten euch die Möglichkeit, per Reisebus nach Hamburg und anschließend wieder zurück nach Rostock zu fahren. Das spart die Übernachtung und ist für alle eine entspannte Art, zum Konzert zu kommen.</p>
+	<p class="w3-large largetext">Sobald uns 15&nbsp;Anmeldungen erreicht haben, wird der Bus bestellt: Euch kostet die Busfahrt (inklusive des Konzert-Tickets) <span class="w3-text-red">maximal 50&nbsp;€.</span> Wenn mehr als die nötigen 15&nbsp;Anmeldungen eingehen, wird es natürlich noch günstiger.</p>
+	<p class="w3-large largetext" style="margin-bottom:2em">Seid ihr dabei? Dann füllt einfach das Anmeldeformular aus. Wir halten euch dann auf dem Laufenden.</p>
         <form class="w3-container" method="post">
-          <h3>Anmeldung</h3>
-	  <input class="w3-input" type="text" name="name_special" id="name_special" placeholder="Name" required>
-	  <input class="w3-input" type="email" name="email_special" id="email_special" placeholder="E-Mail" required>
-	  <input class="w3-input" type="number" name="anzahl_special" id="anzahl_special" placeholder="Anzahl der Personen" min="1" required>
-	  <input class="w3-input" type="text" name="notes_special" id="notes_special" placeholder="Anmerkungen (optional)">
+          <h3 class="modalheads">Anmeldung</h3>
+	  <input class="w3-input mediumtext" type="text" name="name_special" id="name_special" placeholder="Name" required>
+	  <input class="w3-input mediumtext" type="email" name="email_special" id="email_special" placeholder="E-Mail" required>
+	  <input class="w3-input mediumtext" type="number" name="anzahl_special" id="anzahl_special" placeholder="Anzahl der Personen" min="1" required>
+	  <input class="w3-input mediumtext" type="text" name="notes_special" id="notes_special" placeholder="Anmerkungen (optional)">
 	  <div class="w3-bar">
-	    <input class="w3-button w3-bar-item w3-border w3-dark-grey w3-margin-top w3-margin-bottom" type="submit" name="submit_special" value="Absenden" disabled>
+	    <input class="w3-button w3-bar-item w3-border w3-dark-grey w3-margin-top w3-margin-bottom relbuttons" type="submit" name="submit_special" value="Absenden" disabled>
 	  </div>
 	  <hr>
-	  <p class="w3-tiny">Datenschutzhinweis: Die hier erhobenen personengebundenen Daten nutzen wir ausschließlich dafür, mit euch Kontakt aufzunehmen. Sie werden nicht an Dritte weitergegeben und nach dem zweckmäßigen Gebrauch wieder gelöscht.</p>
+	  <p class="w3-tiny tinytext">Datenschutzhinweis: Die hier erhobenen personengebundenen Daten nutzen wir ausschließlich dafür, mit euch Kontakt aufzunehmen. Sie werden nicht an Dritte weitergegeben und nach dem zweckmäßigen Gebrauch wieder gelöscht.</p>
 	  <hr>
 	</form>
-        <p class="w3-large textlink_h">Solltet ihr keinen Bus brauchen, könnt ihr die Tickets natürlich auch direkt auf der Website vom <a href="https://www.sph-bandcontest.de/tickets" target="_blank">SPH-Bandcontest</a> bestellen. Gebt dort im Feld "Bandname" dann bitte "Vicious Intentions" an, um uns zu unterstützen.</p>
-	<p class="w3-large" style="margin-bottom:80px;">Vielen Dank!</p>
-	<span onclick="document.getElementById('tickets').style.display='none'" class="w3-button w3-display-bottommiddle w3-large">&times;</span>
+        <p class="w3-large textlink_h largetext">Solltet ihr keinen Bus brauchen, könnt ihr die Tickets natürlich auch direkt auf der Website vom <a href="https://www.sph-bandcontest.de/tickets" target="_blank">SPH-Bandcontest</a> bestellen. Gebt dort im Feld "Bandname" dann bitte "Vicious Intentions" an, um uns zu unterstützen.</p>
+	<p class="w3-large largetext" style="margin-bottom:3em">Vielen Dank!</p>
+	<span onclick="document.getElementById('tickets').style.display='none'" class="w3-button w3-display-bottommiddle w3-large modalclose">&times;</span>
       </div>
     </div>
   </div>
@@ -533,9 +376,9 @@ Weitere Informationen zum Umgang mit Nutzerdaten durch Google finden Sie in der 
   <?php if (!empty($msg_special)) {
         echo "<div id='ticketsconfirm' class='w3-modal w3-animate-opacity' style='background-color:rgba(0,0,0,0.8);display:block;'>";
         echo "<div class='w3-modal-content'>";
-        echo "<div class='w3-container w3-padding-32' style='width:80%;margin:auto;'>";
-        echo "<p class='w3-large w3-center' style='margin-top:80px;margin-bottom:80px;'>$msg_special</p>";
-        echo "<span onclick='closeticketsconfirm()' class='w3-button w3-display-bottommiddle w3-large'>&times;</span>";
+        echo "<div class='w3-container w3-padding-32' style='width:80%;margin-left:auto;margin-right:auto'>";
+        echo "<p class='w3-large w3-center mediumtext' style='margin-top:4em;margin-bottom:4em;'>$msg_special</p>";
+        echo "<span onclick='closeticketsconfirm()' class='w3-button w3-display-bottommiddle w3-large modalclose'>&times;</span>";
 	echo "</div>";
 	echo "</div>";
 	echo "</div>";
@@ -548,14 +391,15 @@ Weitere Informationen zum Umgang mit Nutzerdaten durch Google finden Sie in der 
         echo "<div id='ticketsconfirm' class='w3-modal w3-animate-opacity' style='background-color:rgba(0,0,0,0.8);display:block;'>";
         echo "<div class='w3-modal-content'>";
         echo "<div class='w3-container w3-padding-32' style='width:80%;margin:auto;'>";
-        echo "<p class='w3-large w3-center' style='margin-top:80px;margin-bottom:80px;'>$msg_contact</p>";
-        echo "<span onclick='closeticketsconfirm()' class='w3-button w3-display-bottommiddle w3-large'>&times;</span>";
+        echo "<p class='w3-large w3-center mediumtext' style='margin-top:4em;margin-bottom:4em'>$msg_contact</p>";
+        echo "<span onclick='closeticketsconfirm()' class='w3-button w3-display-bottommiddle w3-large modalclose'>&times;</span>";
 	echo "</div>";
 	echo "</div>";
 	echo "</div>";
      }
   ?>
 -->
+
 <script>
 //
 // JavaScript
@@ -574,12 +418,13 @@ function changenavbar() {
     var socialbcg = document.getElementById("social_bc_g");
     var header = document.getElementsByClassName("header-img");
     var headergr = 1;
-    if (window.matchMedia("(max-width:1180px)").matches) {
-      headergr = header[0].height;
+    if (window.matchMedia("(min-width:1921px)").matches) {
+      headergr = header[2].height;
     } else if (window.matchMedia("(min-width:1181px), (max-width:1920px)").matches) {
       headergr = header[1].height;
-    } else if (window.matchMedia("(min-width:1921px)").matches) {
-      headergr = header[2].height;
+    }
+    if (window.matchMedia("(max-width:1180px)").matches) {
+      headergr = header[0].height;
     }
     if (document.documentElement.scrollTop > headergr || document.body.scrollTop > headergr) {
         navg.className = "w3-bar w3-large w3-white w3-opacity";
