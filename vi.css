@@ -121,6 +121,7 @@
       .mobile {display:table-cell;width:49.9999%!important}
       #epcover {width: 50%!important}
       .eptracklist {font-size:20px!important;letter-spacing:4px!important}
+      .eptext {font-size:22px!important}
     }
     @media screen and (max-width:1180px) {
       #headerkl {display:block!important}
@@ -131,6 +132,9 @@
       #headerkl {display:none!important}
       #headergr {display:block!important}
       #headermax {display:none!important}
+    }
+    @media screen and (min-width:1200px) {
+      .eptext {font-size:19px!important}
     }
     @media screen and (min-width:1366px) {
       #geschichte p,.vidtitle,.eptext,.largetext {font-size:20px!important}
